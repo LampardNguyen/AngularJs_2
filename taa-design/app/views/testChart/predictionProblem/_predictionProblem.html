@@ -1,0 +1,131 @@
+<div ng-controller="PredictionProblemController" class="Prediction0100">
+	<div class="row">
+		<div class="prediction-header">
+			<div class="col-md-12">
+				<table class="table table-bordered borderlessPre1">
+			      <tbody><tr>
+			        <td class="col-md-1 backGBack">縦軸</td>
+			        <td class="col-md-3">インデント密度（検出数／規模）</td>
+			        <td class="col-md-1 backGH">
+			            目標値
+			        </td>
+			        <td class="col-md-1"> 1</td>
+			        <td class="col-md-1 backGH">
+			            目標ゾーン
+				    </td>
+				    <td class="col-md-1 "> ±0.25</td>
+			      </tr>
+			      <tr>
+			        <td class="backGBack1">横軸</td>
+			        <td>テスト密度（消化数／規模）</td>
+			        <td class="backGH">
+			            目標値
+			        </td>
+			        <td class=""> 0.8</td>
+			        <td class="backGH">
+			            目標ゾーン
+			        </td>
+			        <td class=""> ±0.2</td>
+			      </tr>
+			  </tbody></table>
+			</div>
+			<div class="col-md-8 col-xs-8">
+				<table class="table table-bordered borderlessPre2 vertical-middle">
+			      <tbody><tr>
+			        <td rowspan="2" class="col-md-2 backGC vertical-middle">
+			           <span>プロット方式</span>
+			        </td>
+			        <td class="col-md-2 label-radio">
+			        	<label>
+							<input type="radio" name="1316" ng-model="m.snapShot" value="1">
+							<span class="circle"></span>
+							<span class="check"></span>
+							スナップショット
+						</label>
+			        </td>
+			        <td class="col-md-3">
+			            <div id="cal">
+			            <input type="date" ng-disabled="m.snapShot != 1">
+						</div>
+			        </td>
+			      </tr>
+			      <tr>
+				        <td class="label-radio">
+				        	<label>
+								<input type="radio" name="1316" ng-model="m.snapShot" value="0">
+								<span class="circle"></span>
+								<span class="check"></span>
+								トレンド
+							</label>
+				        </td>
+				        <td>
+				            <span class="ng-binding">
+						       2015/11/02<span> ～ </span>2015/11/19
+						    </span>
+				        </td>
+			      </tr>
+			  </tbody></table>
+			</div>
+			<div class="col-md-4 col-xs-4">
+				<div class="row">
+					<div class="col-xs-12">
+						<table class="table table-bordered">
+							<tr>
+								<td class="backGC">規模</td>
+								<td>FP</td>
+							</tr>
+						</table>
+					</div>
+					<div class="col-xs-12 text-right">
+						<button type="button" class="btn btn-primary margin-bottom-10"><i class="glyphicon glyphicon-search"></i> グラフ表示</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="prediction-content">
+			<div class="col-md-12 ">
+				<div class="table-responsive table-chart-responsive background-color-chart">
+					<table class="table">
+						<tbody>
+							<tr>
+								<td>
+									<!-- scatter chart -->
+								<c3chart bindto-id="scatter-plot2-chart"
+									chart-columns="m.datacolumnsScatter"
+									chart-data-columns="m.dataColumns"
+									chart-data-grid-y-line="m.listScatterGridLineY"
+									chart-data-x-tick-value="m.listScatterXTickValue"
+								    chart-axes-value-x-s="m.chartAxesValueXS"
+								    size-width-flag="m.sizeWidthFlag"
+									region-x-y="m.regionXY"
+									rang-max-y="m.rangMaxY"
+									rang-max-x="m.rangMaxX">
+									<chart-axes values-xs="" />
+									    <chart-axis>
+									       <chart-axis-x axis-position="outer-center" axis-id="x" range-max="0" range-min="0">
+									         <chart-axis-x-tick show-x-tick-value="true" />
+									         <chart-axis-y axis-id="y"
+									                       axis-position="outer-right"  padding-bottom="0" padding-top="100" range-min="0" range-max="0"/>
+									            <chart-axis-y-tick show-y-tick-value="true" />
+									       </chart-axis-x>
+									   </chart-axis>
+								       <chart-grid show-x="false" show-y="true">
+								          <chart-grid-optional axis-id="y" grid-value="0" show-grid-y-line="true" />
+								       </chart-grid>
+								       <chart-tooltip show-tooltip="true" group-tooltip="false"/>
+								       <chart-legend show-legend="true" legend-position="right" />
+								       <chart-region show-region="true"/>
+								       <chart-region show-region="true"/>
+								       <chart-point  r=5 r-select="3" />
+								  </c3chart>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>					
+		</div>
+	</div>
+</div>

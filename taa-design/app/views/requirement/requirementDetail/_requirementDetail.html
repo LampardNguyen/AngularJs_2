@@ -1,0 +1,325 @@
+<div class="row requirementDetail0100" ng-controller="RequirementDetailController" ng-init="init()">
+	<div class="col-md-12">
+		<div class="row form-horizontal">
+			<div class="col-md-6">
+				<div class="row">
+					<div class="form-group">
+						<label for="1" class="col-md-3 col-sm-3 control-label">
+							要件No <i class="glyphicon glyphicon-asterisk required"></i>
+						</label>
+						<div class="col-md-9 col-sm-9">
+							<input type="text" class="form-control" placeholder="ユーザー名" id="1"/>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<label for="2" class="col-md-3 col-sm-3 control-label">
+							要件名 <i class="glyphicon glyphicon-asterisk required"></i>
+						</label>
+						<div class="col-md-9 col-sm-9">
+							<input type="text" class="form-control" placeholder="ユーザー名" id="2"/>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<label for="3" class="col-md-3 col-sm-3 col-xs-12 control-label">
+							要件分類名
+							<i class="glyphicon glyphicon-asterisk required"></i>
+						</label>
+						<div class="col-md-7 col-sm-7 col-xs-10">
+							<input type="text" class="form-control" placeholder="ユーザー名" id="3"/>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-2 text-right">
+							<button class="btn btn-primary" ng-click="showModalRequirementClassEditDetail()">選択</button>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<label for="4" class="col-md-3 col-sm-3 control-label">
+							要件名
+							<i class="glyphicon glyphicon-asterisk required"></i>
+						</label>
+						<div class="col-md-9 col-sm-9">
+							<div class="row">
+								<div class="col-md-4 col-sm-4">
+									<select name='mySelect' id='4'      ng-options='option.name for option in data.availableOptions track by option.id'      ng-model='data.selectedOption' class="form-control"></select>
+								</div>
+								<div class="col-md-8 col-sm-8">
+									<div class="col2-in-row">
+										<label for="5" class="col-md-6 col-sm-6 control-label">
+											要件優先度
+											<i class="glyphicon glyphicon-asterisk required"></i>
+										</label>
+										<div class="col-md-6 col-sm-6">
+											<div class="row">
+												<select name='mySelect' id='5'      ng-options='option.name for option in data.availableOptions track by option.id'      ng-model='data.selectedOption' class="form-control"></select>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="row">
+					<div class="form-group">
+						<label for="6" class="col-md-3 col-sm-3 col-xs-12 control-label">
+							要件分類名
+							<i class="glyphicon glyphicon-asterisk required"></i>
+						</label>
+						<div class="col-md-7 col-sm-7 col-xs-10 ">
+							<div id="6" class="form-control listTag text-long">
+								<span class="content-tag text-long" ng-repeat="(key, value) in m.tagList | limitTo : 5">{{value.tagName}}</span>
+								<span class="content-tag text-long text-center" ng-if="m.tagList.length >5">...</span>
+							</div>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-2 text-right">
+							<button class="btn btn-primary" ng-click="showModalRequirementClassSelectDetail()">選択</button>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<label for="7" class="col-md-3 col-sm-3 control-label">作成者</label>
+						<div class="col-md-9 col-sm-9">
+							<div class="row">
+								<div class="col-md-4 col-sm-4">
+									<div id="7" class="form-control text-long">EXE　太郎</div>
+								</div>
+								<div class="col-md-8 col-sm-8">
+									<div class="col2-in-row">
+										<label for="8" class="col-md-4 col-sm-6 control-label">作成日時</label>
+										<div class="col-md-8 col-sm-6">
+											<div class="row">
+												<div id="8" class="form-control text-long">2016/03/05 17:00</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group">
+						<label for="9" class="col-md-3 col-sm-3 control-label">更新者</label>
+						<div class="col-md-9 col-sm-9">
+							<div class="row">
+								<div class="col-md-4 col-sm-4">
+									<div id="9" class="form-control text-long">EXE　太郎</div>
+								</div>
+								<div class="col-md-8 col-sm-8">
+									<div class="col2-in-row">
+										<label for="10" class="col-md-4 col-sm-6 control-label">更新日時</label>
+										<div class="col-md-8 col-sm-6">
+											<div class="row">
+												<div id="10" class="form-control text-long">2016/03/05 17:00</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="row panel taa-panel-child taa-box-shadow-panel-child">
+					<div class="panel-heading">
+						要件内容
+						<i class="glyphicon glyphicon-asterisk required"></i>
+					</div>
+					<div class="panel-body">
+						<textarea ckeditor="m.editorOptions" ng-model="modelName"></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="row panel taa-panel-child taa-box-shadow-panel-child">
+					<div class="panel-heading">ファイル</div>
+					<div class="panel-body">
+						<input type="file" id="fileUpload" class="ng-hide" />
+						<label for="fileUpload" class="label btn btn-info">ファイル選択</label>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="row text-right">
+
+					<button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="addTagList()">
+						<i class="glyphicon glyphicon-floppy-disk"></i>
+						申請
+					</button>
+					<button type="button" class="btn btn-primary">
+						<i class="glyphicon glyphicon-ok"></i>
+						保存
+					</button>
+					<button type="button" class="btn btn-warning" ui-sref="main.requirement.list">
+						<i class="glyphicon glyphicon-circle-arrow-left"></i>
+						キャンセル
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- modal RequirementClassEdit -->
+	<script type="text/ng-template" id="modalRequirementClassEdit-Detail.html">
+		<div class="modal-header border-bottom">
+			<button type="button" class="close" ng-click="$dismiss('cancel')">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<h4 class="modal-title"> <i class="glyphicon glyphicon-th-list"></i>
+				要件分類（選択）
+			</h4>
+		</div>
+		<div class="model-body">
+			<div class="panel ">
+				<div class="panel-body ModalRequirementDetail0100">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<input class="form-control" placeholder="検索文字を入力して下さい。" type="text" id="idShearch" ng-model="m.searchUser" />
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 side-bar">
+							<div class="border-1">
+								<div class="collapse-tree-list"> <i class="glyphicon glyphicon-minus" ng-click="m.plusMinus = !m.plusMinus"></i>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<abn-tree show-option='true' abn-width="97%" option-width="3%"
+					                            tree-data           ="m.treeList2"
+					                            tree-control        ="m.naviTree"
+					                            icon-leaf           =""
+					                            icon-expand         ="glyphicon glyphicon-triangle-right"
+					                            icon-collapse       ="glyphicon triangle-bottom-right"
+					                            icon-collapse1       ="glyphicon triangle-bottom-right1"
+					                            on-select           ="naviTreeHandler(branch)"
+					                            expand-level        ="2"
+					                            initial-selection   ="{{m.initial}}"
+					                            hidden-plust        ="m.plusMinus"
+					                            event-enter         ="eventEnter(flag)"></abn-tree>
+								</div>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<div class="col-md-12 col-sm-12">
+				<div class="row">
+					<span class="pull-left">30件選択</span>
+					<button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="$dismiss('cancel');"><i class="glyphicon glyphicon-ok"></i> 保存</button>
+					<button type="button" class="btn btn-warning" data-dismiss="modal" ng-click="$dismiss('cancel');"><i class="glyphicon glyphicon-remove"></i> 閉じる</button>
+				</div>
+			</div>
+		</div>
+	</script>
+	<!-- end RequirementClassEdit -->
+	<!-- modal RequirementClassselect -->
+	<script type="text/ng-template" id="modalRequirementClassSelect-Detail.html">
+		<div class="modal-header border-bottom">
+			<button type="button" class="close" ng-click="$dismiss('cancel')">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<h4 class="modal-title"> <i class="glyphicon glyphicon-th-list"></i>
+				要件分類（選択）
+			</h4>
+		</div>
+		<div class="model-body">
+			<div class="panel ">
+				<div class="panel-body ModalRequirementList0100">
+					<div class="row">
+							<div class="col-md-4 col-sm-6 ">
+								<div class="label-checkbox">
+									<label >
+										<input type="checkbox" ng-model="item.registered">							
+										<span class="checkbox-material">
+											<span class="check"></span>
+										</span>
+										選択中のタグのみ表示
+									</label>
+								</div>
+							</div>
+							<div class="col-md-4 col-md-offset-4 col-sm-6 ">
+								<div class="form-group">
+									<input class="form-control" placeholder="検索..." type="text" id="idShearch" ng-model="m.searchUser" />
+								</div>
+							</div>
+						</div>
+						<div class="table-responsive">
+							<table class="table table-bordered table-hover table-striped table-responsive">
+								<thead>
+									<tr>
+										<th class="table-checkbox text-center">
+											<a href="javscript:void(0)">#</a>
+										</th>
+										<th>
+											<a href="javscript:void(0)" ng-click="m.fieldSortUser = 'userName'; m.fieldSortReserveUser = !m.fieldSortReserveUser;">
+												タグ
+												<i class="glyphicon glyphicon-sort"></i>
+											</a>
+										</th>
+										<th>
+											<a href="javscript:void(0)" ng-click="m.fieldSortUser = 'lastName'; m.fieldSortReserveUser = !m.fieldSortReserveUser;">
+												要件
+												<i class="glyphicon glyphicon-sort"></i>
+											</a>
+										</th>
+										<th>
+											<a href="javscript:void(0)" ng-click="m.fieldSortUser = 'lastName'; m.fieldSortReserveUser = !m.fieldSortReserveUser;">
+												テストスイート
+												<i class="glyphicon glyphicon-sort"></i>
+											</a>
+										</th>
+										<th>
+											<a href="javscript:void(0)" ng-click="m.fieldSortUser = 'lastName'; m.fieldSortReserveUser = !m.fieldSortReserveUser;">
+												インシデント
+												<i class="glyphicon glyphicon-sort"></i>
+											</a>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr  ng-repeat="(i, item) in m.classList | filter : m.searchUser | limitTo : m.selectShowUserList | orderBy: m.fieldSortUser : m.fieldSortReserveUser track by $index" class="repeat-animated slide-right">
+										<td class="table-checkbox label-checkbox text-center">
+											<label >
+												<input type="checkbox" ng-model="item.registered">
+												<span class="checkbox-material">
+													<span class="check"></span>
+												</span>
+											</label>
+										</td>
+										<td>{{item.tagName}}</td>
+										<td class="text-center"><a href="javascript:void" title="">{{item.requiment}}</a></td>
+										<td class="text-center"><a href="javascript:void" title="">{{item.testSuite}}</a></td>
+										<td class="text-center"><a href="javascript:void" title="">{{item.insident}}</a></td>
+									</tr>
+
+								</tbody>
+							</table>
+						</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<div class="col-md-12 col-sm-12">
+				<div class="row">
+					<span class="pull-left">30件選択</span>
+					<button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="addTagList()"><i class="glyphicon glyphicon-ok"></i> 保存</button>
+					<button type="button" class="btn btn-warning" data-dismiss="modal" ng-click="$dismiss('cancel');"><i class="glyphicon glyphicon-remove"></i> 閉じる</button>
+				</div>
+			</div>
+		</div>
+	</script>
+	<!-- end RequirementClassselect -->
+</div>

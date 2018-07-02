@@ -1,0 +1,29 @@
+<div class="login row">
+	<div class="Login0100 panel taa-panel taa-box-shadow-panel">
+		<div class="panel-body">
+			<div>
+				<div class="icon-login"> <i class="glyphicon glyphicon-user"></i>
+				</div>
+				<div class="label-text">
+					<h3>パスワードリセット</h3>
+				</div>
+			</div>
+			<form ng-submit="sumbitResetPassword();" accept-charset="utf-8">
+				<div ng-if="m.validateLogin == true" class="col-md-12 form-group">
+					<div class="alert alert-danger">ユーザー名かパスワードに誤りがあります。</div>
+				</div>
+				<div class="col-md-12 label-text">
+					パスワードリセットするには、テストエースアドバンスに登録してあるメールアドレスを入力します。
+				</div>
+				<div class="col-md-12 form-group">
+					<input type="text" class="form-control" placeholder="メールアドレス" ng-model="m.username"/>
+				</div>
+				<div class="col-md-12 form-group">
+					<button type="submit" class="btn btn-primary">OK</button>
+					<a class="reset-pass" ui-sref="login">ログイン画面
+</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

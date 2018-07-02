@@ -1,0 +1,33 @@
+<div class="list-product row">
+	<div class="col-md-12">
+		<div class="panel panel-primary box-shadow-panel">
+			<div class="panel-heading">
+				<h3 class="panel-title">List Product</h3>
+				<button class="btn btn-danger btn-xs pull-right but-logout">Logout</button>
+			</div>
+			<div class="panel-body">
+				<div class="row">
+					<!-- <div form-add-product m="m" click-add-new="clickAdd(itemPush)" click-update-item="clickUpdate(itemUpdate)"></div> -->
+				</div>
+				<div class="table-responsive">
+					<table class="table table-bordered">
+						<tr>
+							<th>#</th>
+							<th>Product name</th>
+							<th>Product code</th>
+							<th>action</th>
+						</tr>
+						<tr *ngFor="#item of m.listProduct">
+							<td>#</td>
+							<td>
+
+							</td>
+							<td>{{item.productCode}}</td>
+							<td><a class="action"  href="javscript:(0)">remove</a><span> </span><a class="action"  href="javscript:(0)">update</a></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

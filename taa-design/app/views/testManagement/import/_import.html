@@ -1,0 +1,166 @@
+<div class="row Import0100" ng-controller="ImportController" ng-init="init();">
+	<div class="col-md-12 col-sm-12">
+		<div class="row row-eq-height">
+			<div class="col-md-6 panel taa-panel-child taa-box-shadow-panel-child">
+				<div class="panel-heading">1.データ種類とテンプレートバージョンの確認</div>
+				<div class="panel-body">
+					<div class="panel taa-panel-child ">
+						<div class="panel-body">
+							<div class="col-md-12">
+								<label for="">取り込みデータ種類を選択してください。</label>
+							</div>
+							<div class="col-md-12 label-radio">
+								<label>
+									<input type="radio" name="dataType" ng-model="m.dataType" value="0">
+									<span class="circle"></span>
+									<span class="check"></span>
+									要件
+								</label>
+							</div>
+							<div class="col-md-12 label-radio">
+								<label>
+									<input type="radio" name="dataType" ng-model="m.dataType" value="1">
+									<span class="circle"></span>
+									<span class="check"></span>
+									テスト計画
+								</label>
+							</div>
+							<div class="col-md-12 label-radio">
+								<label>
+									<input type="radio" name="dataType" ng-model="m.dataType" value="2">
+									<span class="circle"></span>
+									<span class="check"></span>
+									テストスイート
+								</label>
+							</div>
+							<div class="col-md-12 label-radio">
+								<label>
+									<input type="radio" name="dataType" ng-model="m.dataType" value="3">
+									<span class="circle"></span>
+									<span class="check"></span>
+									テストケース
+								</label>
+							</div>
+							<div class="col-md-12 label-radio">
+								<label>
+									<input type="radio" name="dataType" ng-model="m.dataType" value="4">
+									<span class="circle"></span>
+									<span class="check"></span>
+									テスト実行結果
+								</label>
+							</div>
+							<div class="col-md-12 label-radio">
+								<label>
+									<input type="radio" name="dataType" ng-model="m.dataType" value="5">
+									<span class="circle"></span>
+									<span class="check"></span>
+									インシデント
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="panel taa-panel-child panel-version ">
+						<div class="panel-body">
+							<div class="col-md-12">テンプレートのバージョンをご確認ください。</div>
+							<div class="col-md-12">
+								現在のバージョン :
+								<label>1.0</label>
+							</div>
+							<div class="col-md-12 label-checkbox">
+								<label >
+									<input type="checkbox" ng-model="item.registered" >
+									<span class="checkbox-material">
+										<span class="check"></span>
+										<span>データ含む</span>
+									</span>
+								</label>
+								<button ng-disabled="!m.dataType" type="button" class="btn btn-primary pull-right"> <i class="glyphicon glyphicon-cloud-download"></i>
+									テンプレート取得
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 panel taa-panel-child taa-box-shadow-panel-child">
+				<div class="panel-heading">2.ファイル選択</div>
+				<div class="panel-body">
+					<form action="import/uploadFile" method="post" enctype="multipart/form-data" accept-charset="utf-8">
+						<div class="are-drag-drop" ng-click="openBrowser($event)">
+							<input type="file" id="fileZone" >
+							<div class="icon"> <i class="glyphicon glyphicon-open-file"></i>
+								<br>
+								<div class="comment">
+									取り込みするファイルをドロップ
+									<br>（またはクリック）</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="row row-eq-height" ng-if="false">
+			<div class="col-md-6 panel taa-panel-child taa-box-shadow-panel-child">
+				<div class="panel-heading">1.データ種類とテンプレートバージョンの確認</div>
+				<div class="panel-body">
+					<label>
+						<spring:message code="label.taa.comDataImportList.panelLeft.dataType" />
+					</label>
+					<label>{{model.form.templateName}}</label>
+					<div class="col-md-12">
+						<div class="col-md-4">
+							<label>
+								<spring:message code="label.taa.comDataImportList.panelLeft.sum" />
+								{{model.form.totalRow}}
+							</label>
+						</div>
+						<div class="col-md-4">
+							<label>
+								<spring:message code="label.taa.comDataImportList.panelLeft.success" />
+								{{model.form.successCount}}
+							</label>
+						</div>
+						<div class="col-md-4">
+							<label>
+								<spring:message code="label.taa.comDataImportList.panelLeft.fail" />
+								{{model.form.failureCount}}
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 panel taa-panel-child taa-box-shadow-panel-child">
+				<div class="panel-heading">2.ファイル選択</div>
+				<div class="panel-body">
+					<div class="col-md-12">
+						<label ng-show="model.form.totalRow>
+							0">
+							<spring:message code="label.taa.comDataImportList.failName" />
+							{{model.form.logFileName}}
+						</label>
+						<label ng-show="model.form.totalRow <=0">
+							<spring:message code="label.taa.comDataImportList.failName" />
+							<spring:message code="jp.co.systemexe.exex.csv.file.empty" />
+						</label>
+					</div>
+					<div class="col-md-12 text-right">
+						<button type="button" ng-disabled="model.form.totalRow>
+							0?false:true"
+         class="btn btn-primary btn-download"
+         ng-click="downloadLog()">
+							<spring:message code="label.taa.comDataImportList.Download" />
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 text-right">
+				<button disabled type="button" class="btn btn-primary btn-none-transition">
+					<i class="glyphicon glyphicon-cloud-upload"></i>
+					取り込み
+				</button>
+			</div>
+		</div>
+	</div>
+</div>

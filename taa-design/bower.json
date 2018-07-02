@@ -1,0 +1,22 @@
+{
+  "name": "TAA",
+  "version": "1.0.0",
+  "authors": [
+    "duy-linh"
+  ],
+  "description": "TAA Site",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jquery": "~1.*",
+    "angularjs": "~1.5.0",
+    "angular-chart": "^0.5.0",
+    "bootstrap": "~3.3.4",
+    "font-awesome": "~4.3.0",
+    "jquery-ui": "~1.11.4",
+    "angular-ladda": "~0.2.2",
+    "angular-strap": "~2.3.7",
+    "angular-motion": "~0.4.3",
+    "c3-angular": "^1.2.0"
+  }
+}

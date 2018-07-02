@@ -1,0 +1,158 @@
+<div ng-controller="UserDetailController" ng-init="init()">
+	<ol class="breadcrumb taa-box-shadow-panel">
+		<li>
+			<a ui-sref="main.projectList"> <i class="glyphicon glyphicon-home"></i>
+				トップ
+			</a>
+		</li>
+		<li>
+			<a ui-sref="main.user">ユーザー一覧</a>
+		</li>
+		<li class="active">ユーザー詳細</li>
+	</ol>
+	<div  class="panel UserDetail0100 taa-panel taa-box-shadow-panel" >
+		<div class="panel-heading"> <i class="glyphicon glyphicon-th-list"></i>
+			ユーザー詳細
+		</div>
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-md-12 col-sm-12">
+					<div class="panel taa-panel-child taa-box-shadow-panel-child">
+						<div class="panel-heading">情報</div>
+						<div class="panel-body">
+							<div class="row">
+								<form class="form-horizontal">
+									<div class="col-md-6 col-sm-6">
+										<div class="form-group">
+											<label for="idUsername" class="col-md-3 col-sm-3 control-label">
+												ユーザー名
+												<i class="glyphicon glyphicon-asterisk required"></i>
+											</label>
+											<div class="col-md-9 col-sm-9">
+												<input type="text" class="form-control" placeholder="ユーザー名" id="idUsername"/>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="idLastname" class="col-md-3 col-sm-3 control-label">
+												姓
+												<i class="glyphicon glyphicon-asterisk required"></i>
+											</label>
+											<div class="col-md-9 col-sm-9">
+												<input type="text" class="form-control" placeholder="姓" id="idLastname"/>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="idFirstname" class="col-md-3 col-sm-3 control-label">
+												名
+												<i class="glyphicon glyphicon-asterisk required"></i>
+											</label>
+											<div class="col-md-9 col-sm-9">
+												<input type="text" class="form-control" placeholder="名" id="idFirstname"/>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6 col-sm-6">
+										<div class="form-group">
+											<label for="idEmail" class="col-md-3 col-sm-3 control-label">
+												メールアドレス
+												<i class="glyphicon glyphicon-asterisk required"></i>
+											</label>
+											<div class="col-md-9 col-sm-9">
+												<input type="text" class="form-control" placeholder="メールアドレス" id="idEmail"/>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="idLanguage" class="col-md-3 col-sm-3 control-label">言語</label>
+											<div class="col-md-9 col-sm-9">
+												<select name='mySelect' class="form-control" id='mySelect'      ng-options=' option.name for option in m.listLang' ng-model="m.language" ></select>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-offset-3 col-sm-offset-3 col-md-3 col-sm-3 label-checkbox">
+												<label >
+													<input type="checkbox" ng-model="m.watcher" ng-change="clickCheckbox(item);">
+													<span class="checkbox-material">
+														<span class="check"></span>
+														<span>管理者</span>
+													</span>
+												</label>
+											</div>
+											<div class="col-md-6 col-sm-6 label-checkbox">
+												<label uib-tooltip="ユーザー情報をメール送信ユーザー情報をメール送信ユーザー情報をメール送信ユーザー情報をメール送信ユーザー情報をメール送信ユーザー情報をメール送信ユーザー情報をメール送信" tooltip-placement="top">
+													<input type="checkbox" ng-model="m.confirm" ng-change="clickCheckbox(item);">
+													<span class="checkbox-material">
+														<span class="check"></span>
+														<span>ユーザー情報をメール送信</span>
+													</span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12 col-sm-12 slide-right" ng-if="!m.confirm">
+					<div class="panel taa-panel-child taa-box-shadow-panel-child">
+						<div class="panel-heading">認証</div>
+						<div class="panel-body">
+							<div class="row">
+								<form class="form-horizontal">
+									<div class="col-md-offset-3 col-sm-offset-3 col-md-6 col-sm-6">
+										<div class="col-md-12">
+											<div class="form-group">
+												<label for="idPassword" class="col-md-4 col-sm-4 control-label">
+													新しいパスワード
+													<i class="glyphicon glyphicon-asterisk required"></i>
+												</label>
+												<div class="col-md-8 col-sm-8">
+													<input type="password" class="form-control" placeholder="新しいパスワード" id="idPassword"/>
+													<i class="glyphicon glyphicon-eye-open icon-show-pass"></i>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="form-group">
+												<div class="col-md-offset-4 col-sm-offset-4 col-md-8 col-sm-8">最低8文字の長さが必要です。</div>
+											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="form-group">
+												<label for="idConfirm" class="col-md-4 col-sm-4 control-label">
+													パスワード（確認）
+													<i class="glyphicon glyphicon-asterisk required"></i>
+												</label>
+												<div class="col-md-8 col-sm-8">
+													<input type="password" class="form-control" placeholder="パスワード（確認）" id="idConfirm"/>
+													<i class="glyphicon glyphicon-eye-open icon-show-pass"></i>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12 col-sm-12">
+					<div class="form-group text-right">
+						<div type="button" class="btn btn-primary">
+							<i class="glyphicon glyphicon-floppy-disk"></i>
+							作成
+						</div>
+						<div type="button" class="btn btn-primary">
+							<i class="glyphicon glyphicon-floppy-save"></i>
+							連続作成
+						</div>
+						<a ui-sref="main.user" class="btn btn-warning">
+							<i class="glyphicon glyphicon-circle-arrow-left"></i>
+							キャンセル
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

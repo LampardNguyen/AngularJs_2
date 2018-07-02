@@ -1,0 +1,80 @@
+	<div class="row ShowDataImport0100" ng-controller="ShowDataImportController" ng-init="init()">
+		<div class="">
+			<div class="panel taa-panel-child taa-box-shadow-panel-child">
+				<div class="panel-body">
+					<div class="col-md-12">
+						<label>
+						取り込みデータ種類を選択してください。
+					</label>
+
+					</div>
+					<div class="col-md-12">
+						<div class="col-md-2 col-sm-2 label-radio">
+							<label>
+								<input type="radio" name="dataType" ng-model="m.dataType" value="0">
+								<span class="circle"></span>
+								<span class="check"></span>
+								要件
+							</label>
+						</div>
+						<div class="col-md-2 col-sm-2 label-radio">
+							<label>
+								<input type="radio" name="dataType" ng-model="m.dataType" value="1">
+								<span class="circle"></span>
+								<span class="check"></span>
+								テスト計画
+							</label>
+						</div>
+						<div class="col-md-2 col-sm-2 label-radio">
+							<label>
+								<input type="radio" name="dataType" ng-model="m.dataType" value="2">
+								<span class="circle"></span>
+								<span class="check"></span>
+								テストスイート
+							</label>
+						</div>
+						<div class="col-md-2 col-sm-2 label-radio">
+							<label>
+								<input type="radio" name="dataType" ng-model="m.dataType" value="3">
+								<span class="circle"></span>
+								<span class="check"></span>
+								テストケース
+							</label>
+						</div>
+						<div class="col-md-2 col-sm-2 label-radio">
+							<label>
+								<input type="radio" name="dataType" ng-model="m.dataType" value="4">
+								<span class="circle"></span>
+								<span class="check"></span>
+								テスト実行結果
+							</label>
+						</div>
+						<div class="col-md-2 col-sm-2 label-radio">
+							<label>
+								<input type="radio" name="dataType" ng-model="m.dataType" value="5">
+								<span class="circle"></span>
+								<span class="check"></span>
+								インシデント
+							</label>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div id="hot" class="datasheet hot handsontable htColumnHeaders"></div>
+					</div>
+					<div class="col-md-12">
+						<label>10 件中 1 から 10 まで表示</label>
+					
+						<div class="pull-right">
+							<uib-pagination total-items="m.projectList.length" ng-model="m.curentPage" force-ellipses="true" class="pagination-sm" boundary-links="true" num-pages="numPages"></uib-pagination>
+						</div>
+					</div>
+					<div class="col-md-12 col-sm-12 text-right">
+						<div class="margin-bottom-10">
+							<button id="save" type="button" class="btn btn-primary"><i class="glyphicon glyphicon-floppy-disk"></i> 更新</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>

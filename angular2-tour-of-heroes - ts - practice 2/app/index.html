@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app="taaModule">
+<head>
+<base href="/">
+	<title>TAA</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.19/daterangepicker.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css">
+	<link rel="stylesheet" href="app/css/app.css">
+	<!-- https://daneden.github.io/animate.css/ -->
+	<!-- <link rel="stylesheet" href="app/css/animate.css"> -->
+	<!-- <link rel="stylesheet" href="app/css/ng-animation.css"> -->
+	<!-- http://augus.github.io/ngAnimate/ -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.0/es6-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.20/system-polyfills.js"></script>
+    <script src="https://npmcdn.com/angular2@2.0.0-beta.12/es6/dev/src/testing/shims_for_IE.js"></script>
+   
+    <script src="https://code.angularjs.org/2.0.0-beta.12/angular2-polyfills.js"></script>
+    <script src="https://code.angularjs.org/tools/system.js"></script>
+    <script src="https://npmcdn.com/typescript@1.8.9/lib/typescript.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.12/Rx.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.12/angular2.dev.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.12/router.dev.js"></script>
+    <script>
+      System.config({
+        transpiler: 'typescript', 
+        typescriptOptions: { emitDecoratorMetadata: true }, 
+        packages: {'app': {defaultExtension: 'ts'}} 
+      });
+        System.import('./app/ts/bootstrap')
+              .then(null, console.error.bind(console));
+    </script>
+</head>
+<body>
+	<!-- <div ui-view class="slide-top">
+		
+	</div> -->
+	<root><div class="loading">Loading...</div></root>
+</body>
+<!-- libs -->
+<script   src="https://code.jquery.com/jquery-1.12.2.min.js"   integrity="sha256-lZFHibXzMHo3GGeehn1hudTAP3Sc0uKXBXAzHX1sjtk="   crossorigin="anonymous"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js" type="text/javascript" charset="utf-8" ></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js" type="text/javascript" charset="utf-8" ></script> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js" type="text/javascript" charset="utf-8" ></script> -->
+<!-- <script src="https://code.angularjs.org/1.5.3/angular-route.min.js" type="text/javascript" charset="utf-8" ></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js" type="text/javascript" charset="utf-8" ></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-animate.min.js" type="text/javascript" charset="utf-8" ></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.2.5/ui-bootstrap-tpls.min.js" type="text/javascript" charset="utf-8" ></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript" charset="utf-8" ></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.19/moment.min.js" type="text/javascript" charset="utf-8" ></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.19/daterangepicker.min.js" type="text/javascript" charset="utf-8" ></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.js" type="text/javascript" charset="utf-8" ></script> -->
+<!-- <script src="../bower_components/c3-angular/c3-angular.min.js" type="text/javascript" charset="utf-8" ></script> -->
+<!-- main -->
+<!-- <script src="app/js/main.js" type="text/javascript" charset="utf-8" ></script> -->
+<!-- service -->
+<!-- <script src="app/js/services/commonService.js" type="text/javascript" charset="utf-8" ></script> -->
+<!-- directive -->
+<!-- <script src="app/js/directives/knobDirective.js" type="text/javascript" charset="utf-8" ></script> -->
+<!-- <script src="app/js/directives/daterangePickerDirective.js" type="text/javascript" charset="utf-8" ></script> -->
+<!-- controller -->
+<!-- login -->
+<!-- <script src="app/js/login/LoginController.js" type="text/javascript" charset="utf-8" ></script> -->
+<!-- main -->
+<!-- <script src="app/js/main/MainController.js" type="text/javascript" charset="utf-8" ></script> -->
+<!-- projectList -->
+<!-- <script src="app/js/projectList/ProjectListController.js" type="text/javascript" charset="utf-8" ></script> -->
+<!-- <script src="app/js/projectList/ProjectListFactory.js" type="text/javascript" charset="utf-8" ></script> -->
+<!-- projectDetail -->
+<!-- <script src="app/js/projectDetail/ProjectDetailController.js" type="text/javascript" charset="utf-8" ></script> -->
+<!-- <script src="app/js/projectDetail/ProjectDetailFactory.js" type="text/javascript" charset="utf-8" ></script> -->
+<!-- testManagement -->
+<!-- <script src="app/js/testManagement/testManagementController.js" type="text/javascript" charset="utf-8" ></script> -->
+<!-- test status list -->
+<!-- <script src="app/js/testManagement/testStatusList/testStatusListController.js" type="text/javascript" charset="utf-8" ></script> -->
+<!-- import list -->
+<!-- <script src="app/js/testManagement/import/importController.js" type="text/javascript" charset="utf-8" ></script> -->
+<!-- show Data import list -->
+<!-- <script src="app/js/testManagement/showDataImport/showDataImportController.js" type="text/javascript" charset="utf-8" ></script> -->
+</html>
+

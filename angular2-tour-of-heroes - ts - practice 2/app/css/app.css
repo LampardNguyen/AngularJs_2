@@ -1,0 +1,1708 @@
+/* line 1, app/sass/_style.scss */
+.error {
+  background-color: #FFDDDD;
+  border-color: #F1B2B2;
+  color: #EC7676;
+}
+
+/* line 3, app/sass/_main-style.scss */
+root > div.loading {
+  margin: 50px auto;
+  font-size: 45px;
+  width: 220px;
+  color: gray;
+}
+
+/* line 13, app/sass/_main-style.scss */
+body {
+  background-color: #F1EFEF;
+  line-height: 1.42857143;
+  color: #333333;
+}
+
+/* line 18, app/sass/_main-style.scss */
+body, label, input {
+  font-family: Lucida Grande, "Hiragino Kaku Gothic ProN", "\u30d2\u30e9\u30ae\u30ce\u89d2\u30b4 ProN W3", Meiryo, \u30e1\u30a4\u30ea\u30aa, sans-serif;
+  font-size: 12px;
+}
+
+/* line 22, app/sass/_main-style.scss */
+.label {
+  font-size: 90%;
+}
+
+/* line 25, app/sass/_main-style.scss */
+.taa-box-shadow-header {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* line 29, app/sass/_main-style.scss */
+.taa-box-shadow-panel {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.32), 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0px rgba(0, 0, 0, 0.12);
+}
+
+/* line 33, app/sass/_main-style.scss */
+.taa-box-shadow-panel-child {
+  box-shadow: 0px 1px 1px 1px #BFBEBE, 0px 0px 1px 1px #E4E0E0;
+  border: 0px !important;
+}
+
+/* line 38, app/sass/_main-style.scss */
+.taa-box-shadow-panel-child-danger {
+  box-shadow: 0px 1px 1px 1px #D42F2F, 0px 0px 1px 1px rgba(212, 107, 107, 0.47);
+  border: 0px !important;
+}
+
+/* line 43, app/sass/_main-style.scss */
+footer {
+  border: 1px solid #413B3B;
+  padding: 10px 25px;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: #413B3B;
+  text-align: right;
+  color: white;
+  z-index: 3;
+}
+
+/* line 55, app/sass/_main-style.scss */
+.view-content {
+  padding-bottom: 15px;
+}
+
+/* line 58, app/sass/_main-style.scss */
+.NAV0100 {
+  border-radius: 0px;
+  background-color: #413B3B;
+  border-color: #413B3B;
+}
+/* line 64, app/sass/_main-style.scss */
+.NAV0100 .navbar-header a {
+  color: white !important;
+}
+/* line 67, app/sass/_main-style.scss */
+.NAV0100 .navbar-header a.navbar-brand {
+  font-weight: bold;
+}
+/* line 74, app/sass/_main-style.scss */
+.NAV0100 .navbar-nav .open > a {
+  background-color: #82B541 !important;
+}
+/* line 81, app/sass/_main-style.scss */
+.NAV0100 a.dropdown-toggle {
+  color: white !important;
+}
+/* line 84, app/sass/_main-style.scss */
+.NAV0100 a.dropdown-toggle:hover {
+  background-color: #82B541 !important;
+}
+/* line 89, app/sass/_main-style.scss */
+.NAV0100 a.dropdown-toggle:focus {
+  background-color: #82B541 !important;
+}
+/* line 96, app/sass/_main-style.scss */
+.NAV0100 .active a {
+  background-color: #82B541 !important;
+}
+/* line 103, app/sass/_main-style.scss */
+.NAV0100 .dropdown-menu li {
+  border-bottom: 1px solid #E4E4E4;
+}
+/* line 106, app/sass/_main-style.scss */
+.NAV0100 .dropdown-menu li:last-child {
+  border-bottom: 0px;
+}
+/* line 110, app/sass/_main-style.scss */
+.NAV0100 .dropdown-menu li a:hover {
+  background-color: #82B541 !important;
+  color: white !important;
+}
+/* line 116, app/sass/_main-style.scss */
+.NAV0100 .dropdown-menu.user {
+  width: 280px;
+  padding-top: 0px;
+}
+/* line 120, app/sass/_main-style.scss */
+.NAV0100 .dropdown-menu.user .user-info {
+  height: 175px;
+  background-color: #82B541;
+}
+/* line 125, app/sass/_main-style.scss */
+.NAV0100 .dropdown-menu.user .user-info div.user-icon {
+  margin: 0 auto;
+  width: 120px;
+  border-radius: 50%;
+  background-color: #E6E6E6;
+  height: 120px;
+  text-align: center;
+  padding-top: 15px;
+  position: relative;
+  top: 25px;
+}
+/* line 136, app/sass/_main-style.scss */
+.NAV0100 .dropdown-menu.user .user-info div.user-icon i {
+  font-size: 80px;
+}
+/* line 140, app/sass/_main-style.scss */
+.NAV0100 .dropdown-menu.user .user-info div.user-name {
+  text-align: center;
+  color: white;
+  padding: 5px;
+  margin-top: 25px;
+}
+/* line 149, app/sass/_main-style.scss */
+.NAV0100 .dropdown-menu.user .user-footer .btn {
+  margin: 6px;
+}
+
+/* line 156, app/sass/_main-style.scss */
+.Main0100 {
+  margin: 20px 15px 30px 15px;
+}
+/* line 162, app/sass/_main-style.scss */
+.Main0100 .ProjectList0100 table tr td {
+  vertical-align: middle;
+}
+/* line 165, app/sass/_main-style.scss */
+.Main0100 .ProjectList0100 table tr td.progress-knob {
+  text-align: center;
+  width: 100px;
+}
+/* line 169, app/sass/_main-style.scss */
+.Main0100 .ProjectList0100 table tr td.cost {
+  text-align: right;
+}
+/* line 172, app/sass/_main-style.scss */
+.Main0100 .ProjectList0100 table tr td.status {
+  text-align: center;
+}
+/* line 175, app/sass/_main-style.scss */
+.Main0100 .ProjectList0100 table tr td .label-status {
+  width: 80px;
+  display: inline-block;
+}
+/* line 181, app/sass/_main-style.scss */
+.Main0100 .ProjectList0100 table tr th.status {
+  text-align: center;
+}
+/* line 192, app/sass/_main-style.scss */
+.Main0100 .ProjectDetail0100 table tr td .action-btn {
+  width: 40px;
+  display: inline-block;
+  height: 40px;
+  text-align: center;
+  background-color: #D9534F;
+  color: white;
+  padding: 13px;
+  margin: 0 auto;
+  border: 1px solid #D9534F;
+}
+/* line 203, app/sass/_main-style.scss */
+.Main0100 .ProjectDetail0100 table tr td .action-btn:hover {
+  background-color: white;
+  color: #D9534F;
+}
+/* line 215, app/sass/_main-style.scss */
+.Main0100 .TestManagement0100 .tab-container .nav-tabs .active-filter {
+  padding: 0px;
+  padding-bottom: 3px;
+  color: inherit;
+  font-weight: inherit;
+}
+/* line 221, app/sass/_main-style.scss */
+.Main0100 .TestManagement0100 .tab-container .nav-tabs .active-filter .icon-remove {
+  color: #D9534F;
+  padding: 6px;
+  cursor: pointer;
+  font-size: 15px;
+}
+/* line 228, app/sass/_main-style.scss */
+.Main0100 .TestManagement0100 .tab-container .nav-tabs .inactive-filter {
+  padding: 9px 15px;
+}
+/* line 231, app/sass/_main-style.scss */
+.Main0100 .TestManagement0100 .tab-container .nav-tabs .inactive-filter i {
+  font-size: 15px;
+}
+/* line 236, app/sass/_main-style.scss */
+.Main0100 .TestManagement0100 .tab-container .active-filter-layout-small {
+  display: none;
+  padding: 10px 15px;
+  float: right;
+}
+/* line 241, app/sass/_main-style.scss */
+.Main0100 .TestManagement0100 .tab-container .active-filter-layout-small .icon-remove {
+  padding: 8px;
+  color: #D9534F;
+  cursor: pointer;
+}
+@media (max-width: 945px) {
+  /* line 248, app/sass/_main-style.scss */
+  .Main0100 .TestManagement0100 .tab-container .active-filter-layout-small {
+    display: block;
+  }
+  /* line 251, app/sass/_main-style.scss */
+  .Main0100 .TestManagement0100 .tab-container .active-filter-layout-small .icon-remove-top {
+    display: none;
+  }
+  /* line 256, app/sass/_main-style.scss */
+  .Main0100 .TestManagement0100 .tab-container .active.active-filter-layout-large {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  /* line 262, app/sass/_main-style.scss */
+  .Main0100 .TestManagement0100 .tab-container .active-filter-layout-small {
+    float: initial;
+  }
+  /* line 265, app/sass/_main-style.scss */
+  .Main0100 .TestManagement0100 .tab-container .active-filter-layout-small .icon-remove-top {
+    display: inline-block;
+    padding: 0px;
+  }
+  /* line 269, app/sass/_main-style.scss */
+  .Main0100 .TestManagement0100 .tab-container .active-filter-layout-small .icon-remove-end {
+    display: none;
+  }
+}
+/* line 277, app/sass/_main-style.scss */
+.Main0100 .TestManagement0100 .TestStatusList0100 .row-chart .progress-label {
+  margin-bottom: 15px;
+}
+/* line 280, app/sass/_main-style.scss */
+.Main0100 .TestManagement0100 .TestStatusList0100 .row-chart .progress-label-status {
+  color: red;
+  font-weight: bold;
+  margin-top: 3px;
+  margin-right: 5px;
+}
+@media (min-width: 979px) {
+  /* line 286, app/sass/_main-style.scss */
+  .Main0100 .TestManagement0100 .TestStatusList0100 .row-chart .status {
+    border-right: 1px solid #cccccc;
+  }
+}
+@media (max-width: 979px) {
+  /* line 286, app/sass/_main-style.scss */
+  .Main0100 .TestManagement0100 .TestStatusList0100 .row-chart .status {
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+}
+/* line 296, app/sass/_main-style.scss */
+.Main0100 .TestManagement0100 .TestStatusList0100 .row-chart .chart {
+  height: 235px;
+}
+/* line 299, app/sass/_main-style.scss */
+.Main0100 .TestManagement0100 .TestStatusList0100 .row-chart .chart > div {
+  height: 235px;
+}
+/* line 303, app/sass/_main-style.scss */
+.Main0100 .TestManagement0100 .TestStatusList0100 .row-chart .table-detail-progress {
+  display: table;
+  width: 100%;
+}
+/* line 307, app/sass/_main-style.scss */
+.Main0100 .TestManagement0100 .TestStatusList0100 .row-chart .table-detail-progress .table-row {
+  display: table-row;
+}
+/* line 310, app/sass/_main-style.scss */
+.Main0100 .TestManagement0100 .TestStatusList0100 .row-chart .table-detail-progress .table-row > div {
+  display: table-cell;
+  padding: 2px;
+  border-bottom: 1px dashed gray;
+}
+/* line 319, app/sass/_main-style.scss */
+.Main0100 .TestManagement0100 .TestStatusList0100 .row-chart .info-chart {
+  position: relative;
+  top: -52px;
+  width: 285px;
+  right: -160px;
+}
+/* line 329, app/sass/_main-style.scss */
+.Main0100 .Import0100 .are-drag-drop {
+  border: 3px dashed rgba(0, 0, 0, 0.3);
+  height: 335px;
+}
+/* line 333, app/sass/_main-style.scss */
+.Main0100 .Import0100 .are-drag-drop .icon {
+  text-align: center;
+  padding: 15px;
+  margin-top: 75px;
+}
+/* line 338, app/sass/_main-style.scss */
+.Main0100 .Import0100 .are-drag-drop .icon i {
+  font-size: 1000%;
+  display: block;
+  margin: 0 auto;
+  width: 110px;
+}
+/* line 344, app/sass/_main-style.scss */
+.Main0100 .Import0100 .are-drag-drop .icon .comment {
+  color: #B2B2B2;
+}
+/* line 349, app/sass/_main-style.scss */
+.Main0100 .Import0100 .taa-panel-child {
+  margin: 5px 5px 20px 5px;
+  padding: 0px;
+}
+/* line 355, app/sass/_main-style.scss */
+.Main0100 .Import0100 .panel-version .panel-body > div {
+  margin-bottom: 10px;
+}
+/* line 362, app/sass/_main-style.scss */
+.Main0100 .ShowDataImport0100 .datasheet {
+  margin: 15px 0px;
+}
+
+/* line 369, app/sass/_main-style.scss */
+.td-action {
+  position: relative;
+}
+/* line 372, app/sass/_main-style.scss */
+.td-action .action {
+  width: 100%;
+  display: none;
+}
+/* line 376, app/sass/_main-style.scss */
+.td-action .action .action-btn {
+  width: 50%;
+  height: 39px;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  cursor: pointer;
+}
+/* line 384, app/sass/_main-style.scss */
+.td-action .action .action-btn:first-child {
+  background-color: #413B3B;
+  color: white;
+  border: 1px solid #413B3B;
+}
+/* line 391, app/sass/_main-style.scss */
+.td-action .action .action-btn:first-child:hover {
+  background-color: white;
+  color: #413B3B;
+}
+/* line 397, app/sass/_main-style.scss */
+.td-action .action .action-btn:last-child {
+  background-color: #d9534f;
+  color: white;
+  border: 1px solid #d9534f;
+}
+/* line 402, app/sass/_main-style.scss */
+.td-action .action .action-btn:last-child:hover {
+  background-color: white;
+  color: #d9534f;
+}
+
+/* line 410, app/sass/_main-style.scss */
+a {
+  color: #007DFB;
+}
+/* line 413, app/sass/_main-style.scss */
+a:hover {
+  color: #007DFB;
+  text-decoration: initial;
+}
+
+/* line 418, app/sass/_main-style.scss */
+.text-center {
+  text-align: center;
+}
+
+/* line 421, app/sass/_main-style.scss */
+.text-right {
+  text-align: right;
+}
+
+/* line 424, app/sass/_main-style.scss */
+.border-bottom {
+  border-bottom: 1px solid #FF5502;
+}
+
+/* line 427, app/sass/_main-style.scss */
+.text-color-main {
+  color: #5CB85C;
+}
+
+/* line 430, app/sass/_main-style.scss */
+.text-color-gray {
+  color: #d9d9d9;
+}
+
+/* line 433, app/sass/_main-style.scss */
+.text-color-pink {
+  color: #e6b8b9;
+}
+
+/* line 1, app/sass/_bootstrapModify.scss */
+::-webkit-scrollbar {
+  background-color: #f7f7f7;
+  width: 3px;
+  height: 10px;
+}
+
+/* line 6, app/sass/_bootstrapModify.scss */
+::-webkit-scrollbar-thumb {
+  background-color: #cacaca;
+  border-radius: 2px;
+  opacity: 0;
+}
+
+/* line 11, app/sass/_bootstrapModify.scss */
+::-moz-scrollbar-thumb {
+  background-color: #cacaca;
+  border-radius: 2px;
+  opacity: 0;
+}
+
+/* line 16, app/sass/_bootstrapModify.scss */
+::-moz-scrollbar {
+  background-color: #f7f7f7;
+  width: 3px;
+  height: 10px;
+}
+
+/* line 22, app/sass/_bootstrapModify.scss */
+.form-group select {
+  height: 28px;
+  padding: 2px;
+}
+
+/* line 27, app/sass/_bootstrapModify.scss */
+.form-control {
+  border-radius: 0px;
+  box-shadow: none;
+}
+/* line 33, app/sass/_bootstrapModify.scss */
+.form-control:focus {
+  -webkit-box-shadow: 0px 4px 2px -2px #cccccc;
+  box-shadow: 0px 2px 8px 2px rgba(204, 204, 204, 0.8);
+}
+/* line 38, app/sass/_bootstrapModify.scss */
+.form-control:hover {
+  border-color: #4fc3f7;
+  -webkit-box-shadow: 0px 4px 2px -2px #cccccc;
+  box-shadow: 0px 2px 8px 2px rgba(204, 204, 204, 0.8);
+}
+
+/* line 45, app/sass/_bootstrapModify.scss */
+.btn {
+  border-radius: 0px;
+  transition: box-shadow 0.4s ease, color 0.25s ease;
+  box-shadow: 0px 1px 1px 1px #B9B7B7;
+}
+/* line 50, app/sass/_bootstrapModify.scss */
+.btn:focus {
+  outline: none;
+}
+/* line 54, app/sass/_bootstrapModify.scss */
+.btn.btn-success:hover {
+  border-color: #5CB85C;
+  background-color: white;
+  color: #5CB85C;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/* line 63, app/sass/_bootstrapModify.scss */
+.btn.btn-primary {
+  color: #fff;
+  background-color: #5CB85C;
+  border-color: #5CB85C;
+}
+/* line 68, app/sass/_bootstrapModify.scss */
+.btn.btn-primary:hover {
+  border-color: #5CB85C;
+  background-color: white;
+  color: #5CB85C;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/* line 76, app/sass/_bootstrapModify.scss */
+.btn.btn-primary:focus {
+  color: #fff;
+  background-color: #5CB85C;
+  border-color: #5CB85C;
+}
+/* line 84, app/sass/_bootstrapModify.scss */
+.btn.btn-default {
+  border-color: transparent;
+}
+/* line 87, app/sass/_bootstrapModify.scss */
+.btn.btn-default:hover {
+  color: #6D6D6D;
+  background: white;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/* line 95, app/sass/_bootstrapModify.scss */
+.btn.btn-warning:hover {
+  color: #F0AD4E;
+  background: white;
+  border-color: #F0AD4E;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* line 103, app/sass/_bootstrapModify.scss */
+.label {
+  padding: 7px;
+  border-radius: 0px;
+}
+
+/* line 107, app/sass/_bootstrapModify.scss */
+.pagination {
+  margin: 0px;
+}
+/* line 110, app/sass/_bootstrapModify.scss */
+.pagination:hover {
+  border-color: #4fc3f7;
+  -webkit-box-shadow: 0px 4px 2px -2px #cccccc;
+  box-shadow: 0px 2px 8px 2px rgba(204, 204, 204, 0.8);
+}
+/* line 118, app/sass/_bootstrapModify.scss */
+.pagination li:first-child a {
+  border-radius: 0px !important;
+}
+/* line 123, app/sass/_bootstrapModify.scss */
+.pagination li:last-child a {
+  border-radius: 0px !important;
+}
+/* line 128, app/sass/_bootstrapModify.scss */
+.pagination a {
+  color: #5CB85C !important;
+}
+/* line 133, app/sass/_bootstrapModify.scss */
+.pagination .disabled a {
+  color: #777777 !important;
+}
+/* line 138, app/sass/_bootstrapModify.scss */
+.pagination .active a {
+  color: white !important;
+  background-color: #5CB85C !important;
+  border-color: #5CB85C !important;
+}
+
+/* line 147, app/sass/_bootstrapModify.scss */
+.dropdown-menu {
+  border-radius: 0px !important;
+  animation-duration: .5s;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* line 152, app/sass/_bootstrapModify.scss */
+.breadcrumb {
+  margin-top: 50px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 0px;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: 10px;
+}
+/* line 161, app/sass/_bootstrapModify.scss */
+.breadcrumb > li + li {
+  margin-left: -4px;
+}
+/* line 164, app/sass/_bootstrapModify.scss */
+.breadcrumb > li + li a {
+  margin-left: 15px;
+}
+/* line 167, app/sass/_bootstrapModify.scss */
+.breadcrumb > li + li:before {
+  content: initial;
+}
+/* line 171, app/sass/_bootstrapModify.scss */
+.breadcrumb li {
+  position: relative;
+  border: 1px solid rgba(128, 128, 128, 0.38);
+  padding: 6px;
+}
+/* line 172, app/sass/_bootstrapModify.scss */
+.breadcrumb li:last-child {
+  padding-left: 20px;
+}
+/* line 179, app/sass/_bootstrapModify.scss */
+.breadcrumb li a {
+  color: #5CB85C;
+}
+/* line 182, app/sass/_bootstrapModify.scss */
+.breadcrumb li a:hover {
+  color: #5CB85C;
+}
+/* line 185, app/sass/_bootstrapModify.scss */
+.breadcrumb li a:after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-left: 14px solid white;
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+  left: 100%;
+  z-index: 3;
+}
+/* line 199, app/sass/_bootstrapModify.scss */
+.breadcrumb li a:before {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-left: 14px solid #9C9C9C;
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+  margin-left: 1px;
+  left: 100%;
+  z-index: 3;
+}
+
+/* line 217, app/sass/_bootstrapModify.scss */
+.panel-group-danger {
+  border: 2px solid red;
+}
+/* line 220, app/sass/_bootstrapModify.scss */
+.panel-group-danger .panel {
+  border: 0px !important;
+}
+
+/* line 224, app/sass/_bootstrapModify.scss */
+.panel {
+  border-radius: 0px !important;
+}
+/* line 30, app/sass/_var.scss */
+.panel.taa-panel {
+  border-color: transparent;
+}
+/* line 33, app/sass/_var.scss */
+.panel.taa-panel .panel-heading {
+  border-bottom: 4px solid #FF5502;
+}
+/* line 36, app/sass/_var.scss */
+.panel.taa-panel .panel-heading .title {
+  line-height: 5px;
+}
+@media (max-width: 768px) {
+  /* line 40, app/sass/_var.scss */
+  .panel.taa-panel .panel-heading .title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 87%;
+    white-space: nowrap;
+  }
+}
+/* line 47, app/sass/_var.scss */
+.panel.taa-panel .panel-heading .panel-title-right {
+  position: relative;
+  top: -20px;
+}
+/* line 51, app/sass/_var.scss */
+.panel.taa-panel .panel-heading .panel-title-right * {
+  margin-left: 10px;
+}
+/* line 55, app/sass/_var.scss */
+.panel.taa-panel .panel-heading .button-top-right {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  position: relative;
+  top: 8px;
+  padding: 9px;
+}
+/* line 66, app/sass/_var.scss */
+.panel.taa-panel .panel-body.has-btn-primary {
+  padding-top: 25px;
+}
+/* line 71, app/sass/_var.scss */
+.panel.taa-panel-child {
+  border: 1px solid #cccccc;
+}
+/* line 75, app/sass/_var.scss */
+.panel.taa-panel-child .panel-heading {
+  border-bottom: 1px solid #FF5502;
+}
+/* line 78, app/sass/_var.scss */
+.panel.taa-panel-child .panel-heading .button-top-right {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  position: relative;
+  top: 7px;
+  padding: 9px;
+}
+/* line 89, app/sass/_var.scss */
+.panel.taa-panel-child .panel-body.has-btn-primary {
+  padding-top: 25px;
+}
+/* line 228, app/sass/_bootstrapModify.scss */
+.panel table .table-checkbox {
+  width: 40px;
+}
+/* line 231, app/sass/_bootstrapModify.scss */
+.panel table .table-checkbox .check {
+  margin-right: 0px !important;
+}
+/* line 236, app/sass/_bootstrapModify.scss */
+.panel table thead tr {
+  background-color: #5CB85C;
+}
+/* line 239, app/sass/_bootstrapModify.scss */
+.panel table thead tr th {
+  vertical-align: middle !important;
+  border-top: 1px solid #5CB85C !important;
+  border-bottom: 1px solid #5CB85C !important;
+}
+/* line 245, app/sass/_bootstrapModify.scss */
+.panel table thead tr th:first-child {
+  border-left: 1px solid #5CB85C !important;
+}
+/* line 248, app/sass/_bootstrapModify.scss */
+.panel table thead tr th:last-child {
+  border-left: 1px solid #5CB85C !important;
+}
+/* line 253, app/sass/_bootstrapModify.scss */
+.panel table thead a {
+  color: white;
+}
+/* line 254, app/sass/_bootstrapModify.scss */
+.panel table thead a:hover {
+  color: white;
+}
+/* line 261, app/sass/_bootstrapModify.scss */
+.panel table tr td {
+  padding: 3px 8px !important;
+  vertical-align: middle;
+}
+/* line 267, app/sass/_bootstrapModify.scss */
+.panel table tr:hover .td-action > div {
+  display: none !important;
+}
+/* line 270, app/sass/_bootstrapModify.scss */
+.panel table tr:hover .td-action .action {
+  display: table !important;
+}
+
+/* line 280, app/sass/_bootstrapModify.scss */
+.modal .modal-dialog .modal-content {
+  border-radius: 0px;
+}
+
+/* line 286, app/sass/_bootstrapModify.scss */
+i.required {
+  color: red;
+}
+
+/* line 291, app/sass/_bootstrapModify.scss */
+.label-checkbox label {
+  line-height: 1.45;
+  font-weight: 400;
+}
+/* line 296, app/sass/_bootstrapModify.scss */
+.label-checkbox label input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+  margin: 0;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  left: 0;
+  pointer-events: none;
+}
+/* line 308, app/sass/_bootstrapModify.scss */
+.label-checkbox label input[type="checkbox"]:checked + .checkbox-material .check {
+  color: #5CB85C;
+  border-color: #5CB85C;
+}
+/* line 312, app/sass/_bootstrapModify.scss */
+.label-checkbox label input[type="checkbox"]:checked + .checkbox-material .check:before {
+  color: #5CB85C;
+  box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
+  animation: checkbox-on 0.3s forwards;
+}
+/* line 320, app/sass/_bootstrapModify.scss */
+.label-checkbox label .checkbox-material {
+  vertical-align: middle;
+  position: relative;
+  top: 1px;
+}
+/* line 325, app/sass/_bootstrapModify.scss */
+.label-checkbox label .checkbox-material .check {
+  position: relative;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.34);
+  overflow: hidden;
+  z-index: 1;
+  margin-right: 8px;
+  top: 3px;
+}
+/* line 335, app/sass/_bootstrapModify.scss */
+.label-checkbox label .checkbox-material .check:before {
+  position: absolute;
+  content: "";
+  transform: rotate(45deg);
+  display: block;
+  margin-top: -5px;
+  margin-left: 5px;
+  width: 0;
+  height: 0;
+  box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0 inset;
+  animation: checkbox-off 0.3s forwards;
+}
+
+/* line 352, app/sass/_bootstrapModify.scss */
+.label-radio label {
+  line-height: 1.45;
+  font-weight: 400;
+  cursor: pointer;
+}
+/* line 358, app/sass/_bootstrapModify.scss */
+.label-radio label input[type="radio"] {
+  opacity: 0;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}
+/* line 364, app/sass/_bootstrapModify.scss */
+.label-radio label input[type="radio"]:checked ~ .circle {
+  border-color: #5CB85C;
+  opacity: 1;
+}
+/* line 368, app/sass/_bootstrapModify.scss */
+.label-radio label input[type="radio"]:checked ~ .check {
+  -webkit-transform: scale3d(0.55, 0.55, 1);
+  transform: scale3d(0.55, 0.55, 1);
+  background-color: #5CB85C;
+  opacity: 1;
+}
+/* line 375, app/sass/_bootstrapModify.scss */
+.label-radio label .circle {
+  border: 2px solid rgba(0, 0, 0, 0.54);
+  height: 15px;
+  width: 15px;
+  border-radius: 100%;
+}
+/* line 381, app/sass/_bootstrapModify.scss */
+.label-radio label .check {
+  height: 15px;
+  width: 15px;
+  border-radius: 100%;
+  background-color: #5CB85C;
+  -webkit-transform: scale3d(0, 0, 0);
+  transform: scale3d(0, 0, 0);
+  position: relative;
+  left: -19px;
+}
+/* line 391, app/sass/_bootstrapModify.scss */
+.label-radio label .check:after {
+  display: block;
+  position: absolute;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.87);
+  left: -18px;
+  top: -18px;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  z-index: 1;
+  opacity: 0;
+  margin: 0;
+  -webkit-transform: scale3d(1.5, 1.5, 1);
+  transform: scale3d(1.5, 1.5, 1);
+}
+/* line 408, app/sass/_bootstrapModify.scss */
+.label-radio label span {
+  display: inline-block;
+  position: relative;
+  top: 2px;
+  transition-duration: 0.2s;
+}
+
+/* line 419, app/sass/_bootstrapModify.scss */
+.nav-tabs {
+  border-bottom: 2px solid #ddd;
+}
+/* line 423, app/sass/_bootstrapModify.scss */
+.nav-tabs > li {
+  margin-bottom: -2px;
+}
+/* line 426, app/sass/_bootstrapModify.scss */
+.nav-tabs > li .border-bottom-tab {
+  display: none;
+  width: 100%;
+  border: 1px solid #5CB85C;
+  bottom: 0px;
+  height: 2px;
+  position: absolute;
+}
+/* line 435, app/sass/_bootstrapModify.scss */
+.nav-tabs > li:hover .border-bottom-tab {
+  display: inline-block;
+}
+/* line 440, app/sass/_bootstrapModify.scss */
+.nav-tabs > li.active > a {
+  background-color: transparent;
+  border: 0px;
+  color: #5CB85C;
+}
+/* line 445, app/sass/_bootstrapModify.scss */
+.nav-tabs > li.active > a:hover {
+  background-color: transparent;
+  border: 0px;
+  color: #5CB85C;
+}
+/* line 450, app/sass/_bootstrapModify.scss */
+.nav-tabs > li.active > a:focus {
+  background-color: transparent;
+  border: 0px;
+  color: #5CB85C;
+  outline: none;
+}
+/* line 457, app/sass/_bootstrapModify.scss */
+.nav-tabs > li.active .border-bottom-tab {
+  display: inline-block;
+  bottom: -2px;
+}
+/* line 462, app/sass/_bootstrapModify.scss */
+.nav-tabs > li > a {
+  border-radius: 0px;
+  color: #505461;
+  font-weight: 600;
+}
+/* line 467, app/sass/_bootstrapModify.scss */
+.nav-tabs > li > a:hover {
+  color: #5CB85C;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+/* line 476, app/sass/_bootstrapModify.scss */
+.tab-content .tab-pane {
+  padding: 15px;
+  padding-bottom: 0px;
+}
+
+/* line 481, app/sass/_bootstrapModify.scss */
+.border-bottom-none {
+  border-bottom: 0px !important;
+}
+
+@media (min-width: 979px) {
+  /* line 485, app/sass/_bootstrapModify.scss */
+  .row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+/* line 492, app/sass/_bootstrapModify.scss */
+.narrow-progress, .progress .progress-bar.progress-bar-darkgreen:after, .progress .progress-bar.progress-bar-gray:after, .progress .progress-bar.progress-bar-pink:after {
+  content: "";
+  background-color: transparent;
+  margin-right: -8px;
+  margin-top: 20px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  float: right;
+}
+
+/* line 506, app/sass/_bootstrapModify.scss */
+.progress {
+  border-radius: 0px;
+  overflow: visible;
+}
+/* line 510, app/sass/_bootstrapModify.scss */
+.progress .progress-bar {
+  box-shadow: none;
+}
+/* line 513, app/sass/_bootstrapModify.scss */
+.progress .progress-bar.progress-bar-darkgreen {
+  background-color: #5CB85C;
+}
+/* line 516, app/sass/_bootstrapModify.scss */
+.progress .progress-bar.progress-bar-darkgreen:after {
+  border-bottom: 16px solid #5CB85C;
+}
+/* line 521, app/sass/_bootstrapModify.scss */
+.progress .progress-bar.progress-bar-gray {
+  background-color: #cccccc;
+}
+/* line 524, app/sass/_bootstrapModify.scss */
+.progress .progress-bar.progress-bar-gray:after {
+  border-bottom: 16px solid #d9d9d9;
+}
+/* line 529, app/sass/_bootstrapModify.scss */
+.progress .progress-bar.progress-bar-pink {
+  background-color: #e6b8b9;
+}
+/* line 532, app/sass/_bootstrapModify.scss */
+.progress .progress-bar.progress-bar-pink:after {
+  border-bottom: 16px solid #e6b8b9;
+}
+
+/* line 539, app/sass/_bootstrapModify.scss */
+.alert {
+  border-radius: 0px;
+}
+
+/* line 542, app/sass/_bootstrapModify.scss */
+.label-status {
+  width: 80px;
+}
+
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInRight {
+  from {
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+/* line 197, app/sass/_var.scss */
+.slideInRight {
+  -webkit-animation: "slideInRight" 0.5s;
+  animation: "slideInRight" 0.5s;
+}
+
+@-webkit-keyframes slideInUp {
+  from {
+    -webkit-transform: translateY(60px);
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInUp {
+  from {
+    -webkit-transform: translateY(60px);
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* line 197, app/sass/_var.scss */
+.slideInUp {
+  -webkit-animation: "slideInUp" 0.5s;
+  animation: "slideInUp" 0.5s;
+}
+
+@-webkit-keyframes slideInLeft {
+  from {
+    -webkit-transform: translateX(-60px);
+    transform: translateX(-60px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInLeft {
+  from {
+    -webkit-transform: translateX(-60px);
+    transform: translateX(-60px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+/* line 197, app/sass/_var.scss */
+.slideInLeft {
+  -webkit-animation: "slideInLeft" 0.5s;
+  animation: "slideInLeft" 0.5s;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+/* line 197, app/sass/_var.scss */
+.fadeIn {
+  -webkit-animation: "fadeIn" 0.5s;
+  animation: "fadeIn" 0.5s;
+}
+
+/* line 96, app/sass/_var.scss */
+.slide-right {
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+/* line 107, app/sass/_var.scss */
+.slide-right.ng-enter {
+  transform: translateX(60px);
+  -ms-transform: translateX(60px);
+  -webkit-transform: translateX(60px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 0;
+}
+/* line 115, app/sass/_var.scss */
+.slide-right.ng-enter-active {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  opacity: 1;
+}
+/* line 122, app/sass/_var.scss */
+.slide-right.ng-leave {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 130, app/sass/_var.scss */
+.slide-right.ng-leave-active {
+  transform: translateX(60px);
+  -ms-transform: translateX(60px);
+  -webkit-transform: translateX(60px);
+  opacity: 0;
+}
+/* line 138, app/sass/_var.scss */
+.slide-right.ng-hide-add {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 145, app/sass/_var.scss */
+.slide-right.ng-hide-add.ng-hide-add-active {
+  transform: translateX(60px);
+  -ms-transform: translateX(60px);
+  -webkit-transform: translateX(60px);
+  opacity: 0;
+}
+/* line 153, app/sass/_var.scss */
+.slide-right.ng-hide-remove {
+  transform: translateX(60px);
+  -ms-transform: translateX(60px);
+  -webkit-transform: translateX(60px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  display: block !important;
+  opacity: 0;
+}
+/* line 161, app/sass/_var.scss */
+.slide-right.ng-hide-remove.ng-hide-remove-active {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  opacity: 1;
+}
+
+/* line 96, app/sass/_var.scss */
+.slide-left {
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+/* line 107, app/sass/_var.scss */
+.slide-left.ng-enter {
+  transform: translateX(-60px);
+  -ms-transform: translateX(-60px);
+  -webkit-transform: translateX(-60px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 0;
+}
+/* line 115, app/sass/_var.scss */
+.slide-left.ng-enter-active {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  opacity: 1;
+}
+/* line 122, app/sass/_var.scss */
+.slide-left.ng-leave {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 130, app/sass/_var.scss */
+.slide-left.ng-leave-active {
+  transform: translateX(-60px);
+  -ms-transform: translateX(-60px);
+  -webkit-transform: translateX(-60px);
+  opacity: 0;
+}
+/* line 138, app/sass/_var.scss */
+.slide-left.ng-hide-add {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 145, app/sass/_var.scss */
+.slide-left.ng-hide-add.ng-hide-add-active {
+  transform: translateX(-60px);
+  -ms-transform: translateX(-60px);
+  -webkit-transform: translateX(-60px);
+  opacity: 0;
+}
+/* line 153, app/sass/_var.scss */
+.slide-left.ng-hide-remove {
+  transform: translateX(-60px);
+  -ms-transform: translateX(-60px);
+  -webkit-transform: translateX(-60px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  display: block !important;
+  opacity: 0;
+}
+/* line 161, app/sass/_var.scss */
+.slide-left.ng-hide-remove.ng-hide-remove-active {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  opacity: 1;
+}
+
+/* line 96, app/sass/_var.scss */
+.slide-top {
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+/* line 107, app/sass/_var.scss */
+.slide-top.ng-enter {
+  transform: translateY(60px);
+  -ms-transform: translateY(60px);
+  -webkit-transform: translateY(60px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 0;
+}
+/* line 115, app/sass/_var.scss */
+.slide-top.ng-enter-active {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  opacity: 1;
+}
+/* line 122, app/sass/_var.scss */
+.slide-top.ng-leave {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 130, app/sass/_var.scss */
+.slide-top.ng-leave-active {
+  transform: translateY(60px);
+  -ms-transform: translateY(60px);
+  -webkit-transform: translateY(60px);
+  opacity: 0;
+}
+/* line 138, app/sass/_var.scss */
+.slide-top.ng-hide-add {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 145, app/sass/_var.scss */
+.slide-top.ng-hide-add.ng-hide-add-active {
+  transform: translateY(60px);
+  -ms-transform: translateY(60px);
+  -webkit-transform: translateY(60px);
+  opacity: 0;
+}
+/* line 153, app/sass/_var.scss */
+.slide-top.ng-hide-remove {
+  transform: translateY(60px);
+  -ms-transform: translateY(60px);
+  -webkit-transform: translateY(60px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  display: block !important;
+  opacity: 0;
+}
+/* line 161, app/sass/_var.scss */
+.slide-top.ng-hide-remove.ng-hide-remove-active {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  opacity: 1;
+}
+
+/* line 96, app/sass/_var.scss */
+.slide-down {
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+/* line 107, app/sass/_var.scss */
+.slide-down.ng-enter {
+  transform: translateY(-60px);
+  -ms-transform: translateY(-60px);
+  -webkit-transform: translateY(-60px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 0;
+}
+/* line 115, app/sass/_var.scss */
+.slide-down.ng-enter-active {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  opacity: 1;
+}
+/* line 122, app/sass/_var.scss */
+.slide-down.ng-leave {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 130, app/sass/_var.scss */
+.slide-down.ng-leave-active {
+  transform: translateY(-60px);
+  -ms-transform: translateY(-60px);
+  -webkit-transform: translateY(-60px);
+  opacity: 0;
+}
+/* line 138, app/sass/_var.scss */
+.slide-down.ng-hide-add {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 145, app/sass/_var.scss */
+.slide-down.ng-hide-add.ng-hide-add-active {
+  transform: translateY(-60px);
+  -ms-transform: translateY(-60px);
+  -webkit-transform: translateY(-60px);
+  opacity: 0;
+}
+/* line 153, app/sass/_var.scss */
+.slide-down.ng-hide-remove {
+  transform: translateY(-60px);
+  -ms-transform: translateY(-60px);
+  -webkit-transform: translateY(-60px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  display: block !important;
+  opacity: 0;
+}
+/* line 161, app/sass/_var.scss */
+.slide-down.ng-hide-remove.ng-hide-remove-active {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  opacity: 1;
+}
+
+/* line 96, app/sass/_var.scss */
+.toggle {
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+/* line 107, app/sass/_var.scss */
+.toggle.ng-enter {
+  transform: none;
+  -ms-transform: none;
+  -webkit-transform: none;
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 0;
+}
+/* line 115, app/sass/_var.scss */
+.toggle.ng-enter-active {
+  transform: none;
+  -ms-transform: none;
+  -webkit-transform: none;
+  opacity: 1;
+}
+/* line 122, app/sass/_var.scss */
+.toggle.ng-leave {
+  transform: none;
+  -ms-transform: none;
+  -webkit-transform: none;
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 130, app/sass/_var.scss */
+.toggle.ng-leave-active {
+  transform: none;
+  -ms-transform: none;
+  -webkit-transform: none;
+  opacity: 0;
+}
+/* line 138, app/sass/_var.scss */
+.toggle.ng-hide-add {
+  transform: none;
+  -ms-transform: none;
+  -webkit-transform: none;
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 145, app/sass/_var.scss */
+.toggle.ng-hide-add.ng-hide-add-active {
+  transform: none;
+  -ms-transform: none;
+  -webkit-transform: none;
+  opacity: 0;
+}
+/* line 153, app/sass/_var.scss */
+.toggle.ng-hide-remove {
+  transform: none;
+  -ms-transform: none;
+  -webkit-transform: none;
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  display: block !important;
+  opacity: 0;
+}
+/* line 161, app/sass/_var.scss */
+.toggle.ng-hide-remove.ng-hide-remove-active {
+  transform: none;
+  -ms-transform: none;
+  -webkit-transform: none;
+  opacity: 1;
+}
+
+/* line 96, app/sass/_var.scss */
+.slide-right-none-out {
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+/* line 107, app/sass/_var.scss */
+.slide-right-none-out.ng-enter {
+  transform: translateX(60px);
+  -ms-transform: translateX(60px);
+  -webkit-transform: translateX(60px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 0;
+}
+/* line 115, app/sass/_var.scss */
+.slide-right-none-out.ng-enter-active {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  opacity: 1;
+}
+/* line 138, app/sass/_var.scss */
+.slide-right-none-out.ng-hide-add {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 145, app/sass/_var.scss */
+.slide-right-none-out.ng-hide-add.ng-hide-add-active {
+  transform: translateX(60px);
+  -ms-transform: translateX(60px);
+  -webkit-transform: translateX(60px);
+  opacity: 0;
+}
+
+/* line 96, app/sass/_var.scss */
+.slide-left-none-out {
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+/* line 107, app/sass/_var.scss */
+.slide-left-none-out.ng-enter {
+  transform: translateX(-60px);
+  -ms-transform: translateX(-60px);
+  -webkit-transform: translateX(-60px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 0;
+}
+/* line 115, app/sass/_var.scss */
+.slide-left-none-out.ng-enter-active {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  opacity: 1;
+}
+/* line 138, app/sass/_var.scss */
+.slide-left-none-out.ng-hide-add {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+/* line 145, app/sass/_var.scss */
+.slide-left-none-out.ng-hide-add.ng-hide-add-active {
+  transform: translateX(-60px);
+  -ms-transform: translateX(-60px);
+  -webkit-transform: translateX(-60px);
+  opacity: 0;
+}
+
+/* line 1, app/sass/login/_login.scss */
+.login {
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 90px;
+}
+/* line 8, app/sass/login/_login.scss */
+.login .Login0100 .label-checkbox .text {
+  color: #999999;
+  font-size: 14px;
+}
+/* line 13, app/sass/login/_login.scss */
+.login .Login0100 .reset-pass {
+  margin-left: 15px;
+}
+/* line 16, app/sass/login/_login.scss */
+.login .Login0100 .icon-login {
+  color: #5CB85C;
+  font-size: 73px;
+  width: 110px;
+  border-radius: 50%;
+  margin: 0 auto;
+  background-color: rgba(128, 128, 128, 0.25);
+  text-align: center;
+}
+/* line 24, app/sass/login/_login.scss */
+.login .Login0100 .icon-login i {
+  top: 7px;
+}
+/* line 27, app/sass/login/_login.scss */
+.login .Login0100 .icon-login + div {
+  text-align: center;
+  color: #B9B7B7;
+}

@@ -1,0 +1,116 @@
+<div ng-controller="RoleController" ng-init="init()">
+	<ol class="breadcrumb taa-box-shadow-panel">
+		<li>
+			<a ui-sref="main.projectList"> <i class="glyphicon glyphicon-home"></i>
+				トップ
+			</a>
+		</li>
+		<li class="active">ロール一覧</li>
+	</ol>
+	<div  class="panel Role0100 taa-panel taa-box-shadow-panel" >
+		<div class="panel-heading"> <i class="glyphicon glyphicon-th-list"></i>
+			ロール一覧
+			<div ng-if="!m.status" class="btn btn-primary glyphicon glyphicon-plus pull-right button-top-right" ng-click="addNewRole()"></div>
+		</div>
+		<div class="panel-body has-btn-primary">
+			<div class="slide-to-center" >
+				<table class="table table-bordered table-title">
+					<thead>
+						<tr ng-show="m.listPermission.length>
+							0">
+							<th class="text-center">番号</th>
+							<th class="text-center">機能名</th>
+							<th class="text-center">権限名</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="permission in m.listPermission">
+							<td class="text-center">{{::$index + 1}}</td>
+							<td class="text-center" ng-if="permission.functionCount>
+								0 ||($index + 1) == m.listPermission.length" rowspan="{{permission.functionCount}}">
+								            {{::permission.functionName}}
+							</td>
+							<td class="text-center">{{::permission.permissionName}}</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="table-responsive-content">
+					<table  class="table table-bordered table-content">
+						<thead>
+							<tr>
+								<th ng-repeat="role in m.listHeader" class="text-center header-role-{{$index}}" ng-class="{'systemRole':role.systemRole, 'userRole': !role.systemRole, 'has-control': role.status == 'edit'}">
+									<span uib-tooltip="{{role.roleName}}" tooltip-placement="bottom" tooltip-trigger="mouseenter" class="role text-long" tooltip='{{role.roleName}}'>{{role.roleName}}</span>
+									<div class="action-group action-group-xs" ng-if="!role.status && !m.status">
+										<div ng-if="!(m.indexColumn==$index)" class="action-btn-group btn-group-edit" ng-click="editRole(role, $index);">
+											<i class="glyphicon glyphicon-pencil"></i>
+										</div>
+										<div ng-if="(!(m.indexColumn==$index))&&!role.systemRole" class="action-btn-group btn-group-remove"  ng-click="clickOnRemoveRole($index)">
+											<i class="glyphicon glyphicon-trash" ></i>
+										</div>
+									</div>
+									<button ng-if="role.status == 'edit'" class="btn btn-primary btn-xs btn-none-transition"><i class="glyphicon glyphicon-ok"></i> 保存</button>
+									<button ng-if="role.status == 'edit'" class="btn btn-warning btn-xs btn-none-transition" ng-click="cancelEdit(role, $index)"><i class="glyphicon glyphicon-circle-arrow-left"></i> キャンセル</button>
+								</th>
+								<th class="text-center has-control" ng-if="m.status == 'new'">
+									<input  ng-focus="true" name="roleName" type="text" ng-model="m.roleNameNew" maxlength="20" title="ロール名" placeholder="ロール名" class="form-control form-control-xs" />
+																
+									<button class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-ok"></i> 保存</button>
+									<button class="btn btn-warning btn-xs" ng-click="cancelAdd()"><i class="glyphicon glyphicon-circle-arrow-left"></i> キャンセル</button>	
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="body in m.listBody">
+								<td ng-repeat="col in body.listRoleId" class="table-checkbox label-checkbox text-center">
+									<label >
+										<input ng-disabled="!col.statusFlg" type="checkbox" ng-model="col.containt">
+										<span class="checkbox-material">
+											<span class="check" ng-class="{'disabled' : !col.statusFlg}"></span>
+										</span>
+									</label>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<!-- <table ng-if="m.status" class="table table-bordered table-content table-content-edit slide-right-none-out">
+						<thead>
+							<tr>
+								<th class="text-center has-control" ng-class="{'systemRole':role.systemRole, 'userRole': !role.systemRole}">
+									<input ng-if="m.status == 'new'" ng-focus="true" name="roleName" type="text" ng-model="m.roleName" autofocus maxlength="20" title="ロール名" placeholder="ロール名" class="form-control form-control-xs" />
+									<span uib-tooltip="テスト管理者1" tooltip-placement="bottom" tooltip-trigger="mouseenter" ng-if="m.status == 'edit'" class="role-edit">テスト管理者1</span>
+							
+									<button class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-floppy-disk"></i> 保存</button>
+									<button class="btn btn-warning btn-xs" ng-click="m.status = null;"><i class="glyphicon glyphicon-circle-arrow-left"></i> キャンセル</button>	
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="body in m.listBody">
+								<td class="table-checkbox label-checkbox text-center">
+									<label >
+										<input type="checkbox" ng-model="col.containt">
+										<span class="checkbox-material">
+											<span class="check"></span>
+										</span>
+									</label>
+								</td>
+							</tr>
+						</tbody>
+					</table> -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/ng-template" id="modalConfirmRemoveRole.html">
+        <div class="modal-header border-bottom">
+            <h4 class="modal-title"><i class="glyphicon glyphicon-question-sign"></i> 確認</h4>
+        </div>
+        <div class="modal-body">
+            削除してよろしいでしょうか？
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="confirmRemoveRole()"><i class="glyphicon glyphicon-ok"></i> OK</button>
+            <button class="btn btn-warning" type="button" ng-click="cancelRemoveRole()"><i class="glyphicon glyphicon-circle-arrow-left"></i> Cancel</button>
+        </div>
+    </script>
+</div>

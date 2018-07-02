@@ -1,0 +1,320 @@
+<div class="RequirementList0100" ng-controller="RequirementListController" ng-init="init()">
+	<div class="side-bar taa-box-shadow-panel slide-left" ng-show="!m.isShowSidebar">
+		<div class="panel">
+			<div class="panel-body">
+				<div class="collapse-tree-list"> <i class="glyphicon glyphicon-minus" ng-click="m.plusMinus = !m.plusMinus"></i>
+				</div>
+				<abn-tree  show-option='m.showOption' abn-width="198px" option-width="46px" show-check-box="m.showCheckBox"
+					                            tree-data           ="m.treeList"
+					                            tree-control        ="m.naviTree"
+					                            icon-leaf           =""
+					                            icon-expand         ="glyphicon glyphicon-triangle-right"
+					                            icon-collapse       ="glyphicon triangle-bottom-right"
+					                            icon-collapse1       ="glyphicon triangle-bottom-right1"
+					                            on-select           ="naviTreeHandler(branch)"
+					                            expand-level        ="2"
+					                            initial-selection   ="{{m.initial}}"
+					                            hidden-plust        ="m.plusMinus"
+					                            event-enter         ="eventEnter(flag)"></abn-tree>
+			</div>
+		</div>
+	</div>
+	<div class="btn-collapse-sidebar" ng-click="m.showSidebarMini = !m.showSidebarMini"> <i class="glyphicon glyphicon-arrow-right" ng-class="{'glyphicon-arrow-right' : !m.showSidebarMini, 'glyphicon-arrow-left' : m.showSidebarMini}"></i>
+	</div>
+	<div class="taa-box-shadow-panel slide-left side-bar-responsive" ng-if="m.showSidebarMini">
+		<div class="panel">
+			<div class="panel-body">
+				<div class="collapse-tree-list">
+					<i class="glyphicon glyphicon-minus" ng-click="m.plusMinus = !m.plusMinus"></i>
+				</div>
+				<abn-tree show-option='m.showOption' abn-width="198px" option-width="46px" show-check-box="m.showCheckBox"
+					                            tree-data           ="m.treeList"
+					                            tree-control        ="m.naviTree"
+					                            icon-leaf           =""
+					                            icon-expand         ="glyphicon glyphicon-triangle-right"
+					                            icon-collapse       ="glyphicon triangle-bottom-right"
+					                            icon-collapse1       ="glyphicon triangle-bottom-right1"
+					                            on-select           ="naviTreeHandler(branch)"
+					                            expand-level        ="2"
+					                            initial-selection   ="{{m.initial}}"
+					                            hidden-plust        ="m.plusMinus"
+					                            event-enter         ="eventEnter(flag)"></abn-tree>
+			</div>
+		</div>
+	</div>
+	<div class="content-chart transition" ng-class="{'mini-sidebar' : m.isShowSidebar}">
+		<div class="row">
+			<div  class="panel  taa-panel taa-box-shadow-panel" >
+				<i class="glyphicon glyphicon-chevron-left icon-mini-sidebar" ng-click="m.isShowSidebar = !m.isShowSidebar" ng-class="{'glyphicon-chevron-left': !m.isShowSidebar, 'glyphicon-chevron-right': m.isShowSidebar}"></i>
+				<div class="panel-heading">
+					SystemEXE
+					<div class="btn btn-primary glyphicon glyphicon-plus pull-right button-top-right" ui-sref="main.requirement.detail"></div>
+				</div>
+				<div class="panel-body has-btn-primary">
+					<div class="row">
+						<div class="col-md-2 col-sm-4 ">
+							<div class="form-inline form-group">
+								<label for="idShow">表示件数:</label>
+								<select name="mySelect" id="mySelect" class="form-control form-control-xs" ng-options="option for option in m.optionShow" ng-model="m.selectShow"></select>
+							</div>
+						</div>
+						<div class="col-md-4 col-md-offset-4 col-sm-4 ">
+							<div class="form-group">
+								<input class="form-control" placeholder="検索文字を入力して下さい。" type="text" id="idShearch" ng-model="m.search[m.selectColumn]" />
+							</div>
+						</div>
+						<div class="col-md-2 col-sm-4 ">
+							<div class="form-group">
+								<select ng-click="m.search[m.selectColumn]=''" name="mySelect" id="mySelect" class="form-control" ng-options="option.id as option.name for option in m.optionColumn" ng-model="m.selectColumn"></select>
+							</div>
+						</div>
+					</div>
+					<div class="table-responsive">
+						<table class="table table-bordered table-hover table-striped table-responsive table-requirement disabled-select-text">
+							<thead>
+								<tr>
+									<th class="table-checkbox-header table-checkbox label-checkbox text-center">
+										<label >
+											<input type="checkbox" ng-model="m.checkAll" ng-change="changeAllRow()">
+											<span class="checkbox-material">
+												<span class="check"></span>
+											</span>
+										</label>
+									</th>
+									<th>
+										<a href="javscript:void(0)" ng-click="m.fieldSort = 'requirementsNo'; m.fieldSortReserve = !m.fieldSortReserve;">
+											要件No
+											<i class="glyphicon glyphicon-sort"></i>
+										</a>
+									</th>
+									<th>
+										<a href="javscript:void(0)" ng-click="m.fieldSort = 'requirementsName'; m.fieldSortReserve = !m.fieldSortReserve;">
+											要件名
+											<i class="glyphicon glyphicon-sort"></i>
+										</a>
+									</th>
+									<th>
+										<a href="javscript:void(0)" ng-click="m.fieldSort = 'requirementsContents'; m.fieldSortReserve = !m.fieldSortReserve;">
+											要件内容
+											<i class="glyphicon glyphicon-sort"></i>
+										</a>
+									</th>
+									<th>
+										<a href="javscript:void(0)" ng-click="m.fieldSort = 'requirementsState'; m.fieldSortReserve = !m.fieldSortReserve;">
+											要件状態
+											<i class="glyphicon glyphicon-sort"></i>
+										</a>
+									</th>
+									<th class="col-member">
+										<a href="javscript:void(0)" ng-click="m.fieldSort = 'requirementsPriorityId'; m.fieldSortReserve = !m.fieldSortReserve;">
+											要件優先度
+											<i class="glyphicon glyphicon-sort"></i>
+										</a>
+									</th>
+									<th>
+										<a href="javscript:void(0)">要件詳細</a>
+									</th>
+									<th>
+										<a href="javscript:void(0)" ng-click="m.fieldSort = 'testSuiteNumber'; m.fieldSortReserve = !m.fieldSortReserve;">
+											テストスイート件数
+											<i class="glyphicon glyphicon-sort"></i>
+										</a>
+									</th>
+									<th class="text-center">
+										<a href="javscript:void(0)" >タグ</a>
+									</th>
+								</tr>
+							</thead>
+							<tbody >
+								<tr ctrl-shift-click="m.listRequirementFiltered" index="{{i}}" ng-right-click="openContext()" row-right-click='item' source-right-click='m.listRequirementFiltered' ng-repeat="(i, item) in m.listRequirementFiltered = (m.listRequirement | filter : m.search | limitTo : m.selectShow | orderBy: m.fieldSort : m.fieldSortReserve)" class="repeat-animated slide-right" ng-class="{'selected-row' : item.checked}">
+									<td class="table-checkbox label-checkbox text-center">
+										<label>
+											<input type="checkbox" ng-model="item.checked" ng-change="$event.stopPropagation();">
+											<span class="checkbox-material">
+												<span class="check"></span>
+											</span>
+										</label>
+									</td>
+									<td>{{item.requirementsNo}}</td>
+									<td>{{item.requirementsName}}</td>
+									<td>{{item.requirementsContents}}</td>
+									<td class="text-center">{{item.requirementsState}}</td>
+									<td class="text-center" ng-style="{'background-color':m.prioritizeColorList[item.requirementsPriorityId]}">{{item.requirementsPriority}}</td>
+									<td class="text-center">
+										<button class="btn btn-default btn-xs" ui-sref="main.requirement.detail">要件詳細</button>
+									</td>
+									<td class="text-center">
+										<a href="javascript:void(0)" >{{item.testSuiteNumber}}</a>
+									</td>
+									<td class="listTag">
+										<span ng-repeat="(key, value) in item.listTag | limitTo: 2" class="content-tag text-long" uib-tooltip="{{value.tagName}}" tooltip-placement="top">{{value.tagName}}</span>
+										<a href="#" class="content-tag text-center" ng-click="openModalRequirementClassSelect(i, item.listTag)">...</a>
+									</td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+					<div class="row" ng-if="m.listRequirement.length >
+						m.selectShow">
+						<div class="col-sm-12">
+							<label>{{m.listRequirement.length}} 件中 1 から {{m.selectShow}} まで表示</label>
+
+							<div class="pull-right">
+								<uib-pagination total-items="m.listRequirement.length" ng-model="m.curentPage" force-ellipses="true" class="pagination-sm" boundary-links="true" num-pages="numPages"></uib-pagination>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 text-right">
+							<button type="button" class="btn btn-default" ng-click="openModalEditStageChange()">状態変更</button>
+							<button type="button" class="btn btn-danger" ng-disabled="!checkDisabled()">
+								<i class="glyphicon glyphicon-trash"></i>
+								削除
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- modal RequirementClassselect -->
+	<script type="text/ng-template" id="modalRequirementClassSelect.html">
+		<div class="modal-header border-bottom">
+			<button type="button" class="close" ng-click="$dismiss('cancel')">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<h4 class="modal-title"> <i class="glyphicon glyphicon-th-list"></i>
+				要件分類（選択）
+			</h4>
+		</div>
+		<div class="model-body">
+			<div class="panel ">
+				<div class="panel-body ModalRequirementList0100">
+					<div class="row">
+							<div class="col-md-4 col-sm-6 ">
+								<div class="label-checkbox">
+									<label >
+										<input type="checkbox" ng-model="m.tagRegistered" ng-change="showOnlyCheck()">							
+										<span class="checkbox-material">
+											<span class="check"></span>
+										</span>
+										選択中のタグのみ表示
+									</label>
+								</div>
+							</div>
+							<div class="col-md-4 col-md-offset-4 col-sm-6 ">
+								<div class="form-group">
+									<input class="form-control" placeholder="検索..." type="text" id="idShearch" ng-model="m.searchUser" />
+								</div>
+							</div>
+						</div>
+						<div class="table-responsive">
+							<table class="table table-bordered table-hover table-striped table-responsive">
+								<thead>
+									<tr>
+										<th class="table-checkbox text-center">
+											<a href="javscript:void(0)">#</a>
+										</th>
+										<th>
+											<a href="javscript:void(0)" ng-click="m.fieldSortUser = 'tagName'; m.fieldSortReserveUser = !m.fieldSortReserveUser;">
+												タグ
+												<i class="glyphicon glyphicon-sort"></i>
+											</a>
+										</th>
+										<th>
+											<a href="javscript:void(0)" ng-click="m.fieldSortUser = 'requiment'; m.fieldSortReserveUser = !m.fieldSortReserveUser;">
+												要件
+												<i class="glyphicon glyphicon-sort"></i>
+											</a>
+										</th>
+										<th>
+											<a href="javscript:void(0)" ng-click="m.fieldSortUser = 'testSuite'; m.fieldSortReserveUser = !m.fieldSortReserveUser;">
+												テストスイート
+												<i class="glyphicon glyphicon-sort"></i>
+											</a>
+										</th>
+										<th>
+											<a href="javscript:void(0)" ng-click="m.fieldSortUser = 'insident'; m.fieldSortReserveUser = !m.fieldSortReserveUser;">
+												インシデント
+												<i class="glyphicon glyphicon-sort"></i>
+											</a>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr  ng-repeat="(i, item) in m.classListFilter | filter : m.searchUser | limitTo : m.selectShowUserList | orderBy: m.fieldSortUser : m.fieldSortReserveUser track by $index" class="repeat-animated slide-right">
+										<td class="table-checkbox label-checkbox text-center">
+											<label >
+												<input type="checkbox" ng-model="item.registered">
+												<span class="checkbox-material">
+													<span class="check"></span>
+												</span>
+											</label>
+										</td>
+										<td>{{item.tagName}}</td>
+										<td class="text-center"><a href="javascript:void" title="">{{item.requiment}}</a></td>
+										<td class="text-center"><a href="javascript:void" title="">{{item.testSuite}}</a></td>
+										<td class="text-center"><a href="javascript:void" title="">{{item.insident}}</a></td>
+									</tr>
+
+								</tbody>
+							</table>
+						</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<div class="col-md-12 col-sm-12">
+				<div class="row">
+					<span class="pull-left">30件選択</span>
+					
+					<button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="acceptChangeTaglist()"><i class="glyphicon glyphicon-ok"></i> 保存</button>
+					<button type="button" class="btn btn-warning" data-dismiss="modal" ng-click="$dismiss('cancel');"><i class="glyphicon glyphicon-remove"></i> 閉じる</button>
+				</div>
+			</div>
+		</div>
+	</script>
+	<!-- end RequirementClassselect -->
+	<!-- modal edit stage change -->
+	<script type="text/ng-template" id="modalEditStageChange.html">
+		<div class="modal-header border-bottom">
+			<button type="button" class="close" ng-click="$dismiss('cancel')">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<h4 class="modal-title"> <i class="glyphicon glyphicon-th-list"></i>
+				編集中
+			</h4>
+		</div>
+		<div class="model-body">
+			<div class="panel ">
+				<div class="panel-body ModalRequirementList0100">
+					<div >
+						<label>承認者を選択してください。</label>
+					</div>
+					<div class="row">
+						<div class="col-md-8 col-sm-8 col-xs-6">
+							<select name='mySelect' id='mySelect'  class="form-control"    ng-options='option.name for option in data.availableOptions track by option.id'      ng-model='data.selectedOption'></select>
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-6 text-right">
+							<button class="btn btn-primary" ><i class="glyphicon glyphicon-floppy-disk"></i> 申請</button>
+							<button class="btn btn-warning" ><i class="glyphicon glyphicon-remove"></i> 閉じる</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</script>
+	<!-- end modal edit stage change -->
+	<div check-close-popup id="context-requirement-list" class="contextmenu taa-box-shadow-panel context-requirement-list" ng-show="m.showContextMenu">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+	</div>
+</div>
+

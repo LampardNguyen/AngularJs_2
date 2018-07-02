@@ -1,0 +1,165 @@
+<div class="row TestStatusList0100" ng-controller="TestStatusListController">
+	<div class="col-md-12 col-sm-12">
+		<div class="row">
+			<div class="panel-group " ng-repeat="(i, row) in m.listTestSuite | filter : ($parent.m.selectedStatus || $parent.m.search)">
+				<div class="panel taa-panel-child taa-box-shadow-panel-child panel-child-{{row.processStatusNameId}}">
+					<div class="panel-heading" ng-class="{'border-bottom-none' : isCollapsed, 'penel-chart-special' : $index == m.listTestSuite.length - 1}">
+						<div class="title" ng-click="isCollapsed = !isCollapsed">
+							<a href="#" > <i class="glyphicon glyphicon-chevron-up" ng-class="{'glyphicon-chevron-up' : isCollapsed, 'glyphicon-chevron-down' : !isCollapsed}"></i>
+								<label>単体テスト</label>
+							</a>
+							計画 ：{{ row.planBeginDate | date : 'yyyy/MM/dd'}} ～ {{ row.planEndDate | date : 'yyyy/MM/dd'}} 実績 ：{{ row.executionsBeginDate | date : 'yyyy/MM/dd'}} ～ {{ row.executionsEndDate | date : 'yyyy/MM/dd'}} 対応要員数：{{row.staffCount}} 名
+						</div>
+						<div class="panel-title-right">
+							<button class="btn btn-default btn-xs pull-right" ui-sref="main.testChart.testProgress"><i class="glyphicon glyphicon-stats"></i> グラフ詳細</button>
+							<span ng-if="isCollapsed" class="label label-default label-status pull-right label-{{row.processStatusNameId}} toggle">{{row.processStatusName}}</span>
+						</div>
+
+					</div>
+					<div uib-collapse="isCollapsed" >
+						<div class="panel-body">
+							<div class="row-chart row row-eq-height ">
+								<div class="status col-lg-7 col-md-6  col-xs-12">
+									<div class="col-md-12">
+										<label class="progress-label">■テストの進捗状況</label>
+										<span class="label label-default label-status pull-right label-{{row.processStatusNameId}}">{{row.processStatusName}}</span>
+										<div class="pull-right" ng-if="row.testStatusCd==1">
+											<label class="progress-label-status">
+												{{row.layDayMin}}
+												<span></span>
+												日遅れ
+											</label>
+										</div>
+										<!-- <div class="progress">
+											<div ng-if="!(row.percentageTestNumberPlan >
+												0)" class="progress-bar progress-bar-pink" aria-valuenow="0" ng-style="{width : ( 0 + '%' ) }">
+												<span class="sr-only">0%</span>
+											</div>
+											<div class="progress-bar progress-bar-darkgreen" aria-valuenow="row.percentageTestNumberCompleted" ng-style="{width : ( row.percentageTestNumberCompleted + '%' ) }">
+												<span class="sr-only">{{row.percentageTestNumberCompleted}}%</span>
+											</div>
+											<div ng-if="row.percentageTestNumberPlan >
+												0" class="progress-bar progress-bar-pink" aria-valuenow="row.percentageTestNumberPlan" ng-style="{width : ( row.percentageTestNumberPlan + '%' ) }">
+												<span class="sr-only">{{row.percentageTestNumberPlan}}%</span>
+											</div>
+											<div ng-if="row.percentageTestNumber >
+												0" class="progress-bar progress-bar-gray"
+							             aria-valuenow="row.percentageTestNumber"
+							             ng-style="{width : ( row.percentageTestNumber + '%' ) }">
+												<span class="sr-only">{{row.percentageTestNumber}}%</span>
+											</div>
+										</div> -->
+										<div class="progress">
+											<div class="progress-bar progress-bar-darkgreen"
+											             aria-valuenow="row.percentageTestNumberCompleted"
+											             ng-style="{width : ( row.percentageTestNumberCompleted + '%' ) }">
+												<span class="sr-only">{{row.percentageTestNumberCompleted}}%</span>
+											</div>
+											<div ng-if="row.testNumberCompleted < row.testNumberPlan" class="progress-bar progress-bar-pink"
+											             aria-valuenow="row.percentageTestNumberPlan"
+											             ng-style="{width : ( row.percentageTestNumberPlan + '%' ) }">
+												<span class="sr-only">{{row.percentageTestNumberPlan}}%</span>
+											</div>
+											<div ng-if="row.percentageTestNumber >
+												0" class="progress-bar progress-bar-gray"
+											             aria-valuenow="{{row.percentageTestNumber}}"
+											             ng-style="{width : ( row.percentageTestNumber + '%' ) }">
+												<span class="sr-only">{{row.percentageTestNumber}}%</span>
+											</div>
+										</div>
+										<div ng-if="row.testNumberCompleted >
+											row.testNumberPlan" class="progress-bar-pink-after"
+											             ng-style="{width : ( row.percentageTestPlanCurrent + '%' ) }">
+										</div>
+									</div>
+									<div class="col-md-12 table-detail-progress">
+										<div class="table-row">
+											<div class="table-detail-text text-color-gray">■テスト総数</div>
+											<div class="table-detail-colon">:</div>
+											<div class="table-detail-percent">{{row.testNumber}} 件</div>
+										</div>
+										<div class="table-row">
+											<div class="table-detail-text text-color-pink">■テスト計画数(現在日まで)</div>
+											<div class="table-detail-colon">:</div>
+											<div class="table-detail-percent">{{row.testNumberPlan}} 件</div>
+										</div>
+										<div class="table-row">
+											<div class="table-detail-text text-color-main">■テスト完了数</div>
+											<div class="table-detail-colon">:</div>
+											<div class="table-detail-percent">{{row.testNumberCompleted}} 件</div>
+										</div>
+										<div class="table-row">
+											<div class="table-detail-text">達成率（テスト完了数/テスト計画数）</div>
+											<div class="table-detail-colon">:</div>
+											<div class="table-detail-percent">
+												<a>{{row.achievementRate}} %</a>
+											</div>
+										</div>
+										<div class="table-row">
+											<div class="table-detail-text">全体の進捗（テスト完了数/テスト総数）</div>
+											<div class="table-detail-colon">:</div>
+											<div class="table-detail-percent">
+												<a>{{row.overallProgress}} %</a>
+											</div>
+										</div>
+										<div class="table-row">
+											<div class="table-detail-text">１日当たり消化数</div>
+											<div class="table-detail-colon">:</div>
+											<div class="table-detail-percent">{{row.digestionNumber}} 件</div>
+										</div>
+									</div>
+								</div>
+								<div class="chart col-lg-5 col-md-6  col-xs-12">
+									<div class="col-md-12 background-color-chart">
+										<label class="progress-label">■インシデントの対応状況</label>
+										<c3chart bindto-id="{{'bar'+$index}}"
+												         chart-data="row.datapointsBar"
+												         chart-columns="row.datacolumnsBar"
+												         chart-x="row.dataxBar"
+												         show-labels="true">
+											<chart-legend show-legend="true" legend-position="right"/>
+											<chart-grid show-x="false" show-y="true" ></chart-grid>
+											<chart-size chart-height="206" chart-width="310"/>
+											<chart-group group-values="bar-2,bar-3"/>
+											<chart-axis>
+												<chart-axis-y axis-id="y"
+													                  axis-position="outer-right"
+													                  padding-top="100"
+													                  padding-bottom="0"
+													                  range-min="0"/>
+												<chart-axis-x show = "false" />
+											</chart-axis>
+											<chart-tooltip show-tooltip="false" group-tooltip="true"/>
+										</c3chart>
+										<div class="info-chart">
+											<div class="col-md-12 table-detail-progress">
+												<div class="table-row">
+													<div class="table-detail-text-chart">発生率(検出数/テスト完了数)</div>
+													<div class="table-detail-colon">:</div>
+													<div class="table-detail-percent">
+														<a>{{row.insident}} %</a>
+													</div>
+												</div>
+												<div class="table-row">
+													<div class="table-detail-text-chart">発生率(検出数/テスト完了数)</div>
+													<div class="table-detail-colon">:</div>
+													<div class="table-detail-percent">
+														<a>{{row.convergenceRate}} %</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div ng-if="m.listTestSuite == null || m.listTestSuite.length == 0" class="no-data text-center">
+				<i class="fa fa-frown-o text-gray"></i><br>
+				<span class="content">データは存在しません。</span>
+			</div>
+		</div>
+	</div>
+</div>

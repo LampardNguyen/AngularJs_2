@@ -1,0 +1,93 @@
+<div class="row Import0100" ng-controller="importController">
+	<div class=" row-eq-height">
+		<div class="col-md-6 col-sm-6 panel taa-panel-child taa-box-shadow-panel-child">
+			<div class="panel-heading">1.データ種類とテンプレートバージョンの確認</div>
+			<div class="panel-body">
+				<div class="panel taa-panel-child ">
+					<div class="panel-body">
+						<div class="col-md-12">
+							<label for="">取り込みデータ種類を選択してください。</label>
+						</div>
+						<div class="col-md-12 label-radio">
+							<label>
+								<input type="radio" name="dataType" ng-model="m.dataType" value="1">
+								<span class="circle"></span>
+								<span class="check"></span>
+								テスト計画
+							</label>
+						</div>
+						<div class="col-md-12 label-radio">
+							<label>
+								<input type="radio" name="dataType" ng-model="m.dataType" value="2">
+								<span class="circle"></span>
+								<span class="check"></span>
+								テストスイート
+							</label>
+						</div>
+						<div class="col-md-12 label-radio">
+							<label>
+								<input type="radio" name="dataType" ng-model="m.dataType" value="3">
+								<span class="circle"></span>
+								<span class="check"></span>
+								テストケース
+							</label>
+						</div>
+						<div class="col-md-12 label-radio">
+							<label>
+								<input type="radio" name="dataType" ng-model="m.dataType" value="4">
+								<span class="circle"></span>
+								<span class="check"></span>
+								テスト実行結果
+							</label>
+						</div>
+						<div class="col-md-12 label-radio">
+							<label>
+								<input type="radio" name="dataType" ng-model="m.dataType" value="5">
+								<span class="circle"></span>
+								<span class="check"></span>
+								インシデント
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="panel taa-panel-child panel-version ">
+					<div class="panel-body">
+						<div class="col-md-12">テンプレートのバージョンをご確認ください。</div>
+						<div class="col-md-12">
+							現在のバージョン :
+							<label>1.0</label>
+						</div>
+						<div class="col-md-12 label-checkbox">
+							<label >
+								<input type="checkbox" ng-model="item.registered" >
+								<span class="checkbox-material">
+									<span class="check"></span>
+									<span>データ含む</span>
+								</span>
+							</label>
+							<button ng-disabled="!m.dataType" type="button" class="btn btn-primary pull-right">テンプレート取得</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 col-sm-6 panel taa-panel-child taa-box-shadow-panel-child">
+			<div class="panel-heading">2.ファイル選択</div>
+			<div class="panel-body">
+				<div class="are-drag-drop">
+					<div class="icon"> <i class="glyphicon glyphicon-open-file"></i>
+						<br>
+						<div class="comment">
+							取り込みするファイルをドロップ
+							<br>（またはクリック）</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+		<button disabled type="button" class="btn btn-primary pull-right">取り込み</button>
+	</div>
+	</div>
+</div>

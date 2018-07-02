@@ -1,0 +1,500 @@
+<div ng-controller="TestProgressController" class="TestProgress0100" ng-init="init()">
+	<div class="row progress-header">
+		<div class="col-md-6 col-sm-8">
+			<table class="table table-bordered ">
+				<tbody>
+					<tr>
+						<td class="col-md-1 backGBack" rowspan="2">縦軸</td>
+						<td class="col-md-1 backGBack">主軸</td>
+						<td class="col-md-2 backGBack">テストケース</td>
+						<td class="col-md-3">
+							<div class="col-md-6 col-sm-6 ">
+								<div class="row label-radio">
+									<label>
+										<input type="radio" ng-model="m.form.numberRemaining" value="1" ng-click="option(1)" id="rdTestCase0" name="testCase">
+										<span class="circle"></span>
+										<span class="check"></span>
+										残数
+									</label>
+								</div>
+							</div>
+							<div class="col-md-6 col-sm-6 ">
+								<div class="row label-radio">
+									<label>
+										<input type="radio" ng-model="m.form.numberRemaining" value="2" ng-click="option(2)" id="rdTestCase1" name="testCase">
+										<span class="circle"></span>
+										<span class="check"></span>
+										消化数
+									</label>
+								</div>
+							</div>
+
+						</td>
+					</tr>
+					<tr>
+						<td class="backGBack">第２軸</td>
+						<td class="backGBack">インシデント</td>
+						<td>
+							<div class="col-md-12 ">
+								<div class="row label-checkbox">
+									<label >
+										<input id="cumulative" name="cumulative" type="checkbox" ng-model="m.form.checkBox" >
+										<span class="checkbox-material">
+											<span class="check"></span>
+											<span>累積数</span>
+										</span>
+									</label>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="backGBack1">横軸</td>
+						<td class="backGBack1">主軸</td>
+						<td class="backGBack1">単位</td>
+						<td >
+							<div class="form-inline col-md-12">
+								<div class="row">
+									<select name='mySelect' id='mySelect' class="form-control form-control-xs form-select"     ng-options='option for option in m.listLineGridLineY track by $index'   ng-model='m.selectedOption'></select>
+									日
+								</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="col-md-6 col-sm-4">
+			<div class="form-group">
+				<button type="button" class="btn btn-primary margin-bottom-10"> <i class="glyphicon glyphicon-search"></i>
+					グラフ表示
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="row progress-content">
+		<div class="col-md-12">
+			<div class="panel taa-panel-child taa-box-shadow-panel-child">
+				<div class="panel-heading" ng-class="{'border-bottom-none' : isCollapsed1}">
+					<div class="title" ng-click="isCollapsed1 = !isCollapsed1">
+						<a role="button" > <i class="glyphicon glyphicon-chevron-up" ng-class="{'glyphicon-chevron-up' : isCollapsed1, 'glyphicon-chevron-down' : !isCollapsed1}"></i>
+							<label>PB曲線</label>
+						</a>
+					</div>
+				</div>
+				<div uib-collapse="isCollapsed1" >
+					<div class="panel-body">
+						<div class="col-md-12">
+							<div class="row chart table-responsive table-chart-responsive">
+								<table class="table">
+									<tbody>
+										<tr>
+											<td class="background-color-chart">
+												<c3chart bindto-id="testProgressLine"
+						        show-labels="false" show-subchart="false" enable-zoom="true"
+						        chart-data="m.datapoints"
+								chart-columns="m.datacolumns"
+								chart-x="m.datax"
+								chart-data-grid-y-line="m.listLineGridLineY"
+								chart-data-grid-x-line="m.chart.valueLineX"
+								chart-data-x-tick-value="m.listLineXTickValue"
+								rang-max-y2="m.rangeMax"
+								size-width-flag="m.chart.sizeWidthFlag"
+								chart-data-y2-tick-value="m.listChartAxisY2Tick">
+
+													<chart-axes values-x="x" y="line-1,line-2" y2="line-3,line-4" />
+													<chart-axis>
+														<chart-axis-x
+						     axis-position="outer-center"
+						     axis-id="x"
+						    	axis-type="timeseries">
+															<chart-axis-x-tick
+						         show-x-tick-value="true"
+						         tick-format="%d" />
+														</chart-axis-x>
+														<chart-axis-y
+						          axis-id="y"
+						          padding-top="100"
+						          padding-bottom="1"
+						          range-min="0" />
+														<chart-axis-y-tick
+					               show-y-tick-value="true" />
+														<chart-axis-y
+						         axis-id="y2"
+						         padding-top="200"
+						         padding-bottom="1"
+						         value="123"
+						         range-min="0" />
+														<chart-axis-y2-tick show-y2-tick-value="true"></chart-axis-y2-tick>
+													</chart-axis>
+													<chart-legend show-legend="true"
+									legend-position="right" />
+
+													<chart-grid show-x="false"
+									show-y="true">
+														<chart-grid-optional axis-id="y"
+						     grid-value="0"
+						     show-grid-y-line="true" />
+														<chart-grid-optional
+						     axis-id="x"
+						     grid-value="0"
+						     show-grid-x-line="true"/>
+													</chart-grid>
+												</c3chart>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="row chart-table-content">
+								<div class="panel taa-panel-child taa-box-shadow-panel-child">
+									<div class="panel-heading" ng-class="{'border-bottom-none' : isCollapsed2}">
+										<div class="title" ng-click="isCollapsed2 = !isCollapsed2">
+											<a role="button" >
+												<i class="glyphicon glyphicon-chevron-up" ng-class="{'glyphicon-chevron-up' : isCollapsed2, 'glyphicon-chevron-down' : !isCollapsed2}"></i>
+												<label>データ表示</label>
+											</a>
+										</div>
+									</div>
+									<div uib-collapse="isCollapsed2" >
+										<div class="panel-body">
+											<div class="col-md-12 ">
+												<div class="row">
+													<table class="table table-bordered table-title">
+														<thead>
+															<tr>
+																<th class="header-no-content"></th>
+															</tr>
+														</thead>
+														<tbody class="travelTbody">
+															<tr>
+																<th class="th-title1 text-left" >
+																	<span>その日の消化予定数</span>
+																</th>
+															</tr>
+															<tr>
+																<th class="th-title text-left">
+																	<span>その日の消化数</span>
+																</th>
+															</tr>
+															<tr>
+																<!-- その日の実行数 -->
+																<th class="th-title text-left">
+																	<span>その日の実行数</span>
+																</th>
+															</tr>
+														</tbody>
+														<tfoot class="travelTfoot">
+															<tr>
+																<th class="color-chart1-line1 text-left">
+																	<span>残予定数</span>
+																</th>
+															</tr>
+															<tr>
+																<th class="color-chart1-line2 text-left" >
+																	<span>残数</span>
+																</th>
+															</tr>
+															<tr >
+																<th class="color-chart1-line3 text-left" >累積予定数</th>
+															</tr>
+															<tr >
+																<th class="color-chart1-line4 text-left" >累積数</th>
+															</tr>
+														</tfoot>
+													</table>
+													<div class="table-responsive-content">
+														<table class="table table-bordered table-content text-center">
+															<thead class="travelThead">
+																<tr>
+																	<th class="titleMonth text-center" ng-repeat="c in m.data.columnsMonth" colspan="{{c.colSpan}}" >{{c.value}}</th>
+																</tr>
+																<tr>
+																	<th ng-repeat="c in m.data.columns" class="th-header text-center">{{c.day}}</th>
+																</tr>
+															</thead>
+															<tbody class="travelTbody">
+																<tr>
+																	<td ng-repeat="data in m.data.dataLine1" ng-click="showInfo(data)">
+																		<span>{{data.value}}</span>
+																	</td>
+																</tr>
+																<tr>
+																	<td ng-repeat="data in m.data.dataLine2" ng-click="showInfo(data)">
+																		<span>{{data.value}}</span>
+																	</td>
+																</tr>
+																<tr>
+																	<td ng-repeat="data in m.data.dataLine5" ng-click="showInfo(data)">
+																		<span>{{data.value}}</span>
+																	</td>
+																</tr>
+															</tbody>
+															<tfoot class="travelTfoot">
+																<tr>
+																	<td ng-repeat="data in m.data.dataCalLine1" class="color-chart1-line1">{{data.value}}</td>
+																</tr>
+																<tr>
+																	<td ng-repeat="data in m.data.dataCalLine2" class="color-chart1-line2">{{data.value}}</td>
+																</tr>
+																<tr >
+																	<td ng-repeat="data in m.data.dataCalLine3" class="color-chart1-line3">{{data.value}}</td>
+																</tr>
+																<tr >
+																	<td ng-repeat="data in m.data.dataCalLine4" class="color-chart1-line4">{{data.value}}</td>
+																</tr>
+															</tfoot>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<div class="panel taa-panel-child taa-box-shadow-panel-child">
+				<div class="panel-heading" ng-class="{'border-bottom-none' : isCollapsed3}">
+					<div class="title" ng-click="isCollapsed3 = !isCollapsed3">
+						<a role="button" >
+							<i class="glyphicon glyphicon-chevron-up" ng-class="{'glyphicon-chevron-up' : isCollapsed3, 'glyphicon-chevron-down' : !isCollapsed3}"></i>
+							<label>PB曲線</label>
+						</a>
+					</div>
+				</div>
+				<div uib-collapse="isCollapsed3" >
+					<div class="panel-body">
+						<div class="col-md-12 chart">
+							<div class="row">
+								<div class="col-md-7">
+									<div class="row">
+										<table class="table table-bordered borderlessTestPr1 text-center">
+											<tbody>
+												<tr>
+													<td class="col-md-1 backGBack">縦軸</td>
+													<td class="col-md-1 backGBack">主軸</td>
+													<td class="col-md-2 backGBack">インシデント</td>
+													<td class="col-md-2">（検出数）</td>
+												</tr>
+												<tr>
+													<td class="backGBack1">横軸</td>
+													<td class="backGBack1">主軸</td>
+													<td class="backGBack1">期間</td>
+													<td class="ng-binding">1日</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="row chart table-responsive table-chart-responsive">
+										<table class="table">
+											<tbody>
+												<tr>
+													<td class="background-color-chart">
+														<c3chart bindto-id="testProgressBar" 
+								         show-labels="false" show-subchart="false" enable-zoom="true"
+								         chart-data="m.datapointsBar"
+									     chart-columns="m.datacolumnsBar"
+									     chart-x="m.dataxBar"
+									     chart-data-grid-y-line="m.listBarGridLineY"
+									     chart-data-grid-x-line="m.chart.valueLineXBar"
+									     chart-data-x-tick-value="m.listBarXTickValue"
+									     size-width-flag="m.chart.sizeWidthFlag"
+									     ratio-bar="m.ratioBar">
+															<chart-axes values-x="x" y="barTP-1,barTP-2" />
+															<chart-axis>
+																<chart-axis-x axis-position="outer-center"
+							                       axis-id="x"
+							                       axis-type="timeseries">
+																	<chart-axis-x-tick
+							                      show-x-tick-value="true"
+							                      tick-format="%d" />
+																</chart-axis-x>
+																<chart-axis-y
+							                     axis-id="y"
+							                     padding-top="110"
+							                     padding-bottom="0"/>
+																<chart-axis-y-tick
+							                     show-y-tick-value="true" />
+															</chart-axis>
+															<chart-legend show-legend="true"
+							                    legend-position="right" />
+															<chart-grid show-x="false"
+							                  show-y="true">
+																<chart-grid-optional axis-id="y"
+							                  grid-value="0"
+							                  show-grid-y-line="true" />
+																<chart-grid-optional
+							                axis-id="x"
+							                grid-value="0"
+							                show-grid-x-line="true"/>
+															</chart-grid>
+														</c3chart>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12 chart-table-content">
+							<div class="row">
+								<div class="panel taa-panel-child taa-box-shadow-panel-child">
+									<div class="panel-heading" ng-class="{'border-bottom-none' : isCollapsed4}">
+										<div class="title" ng-click="isCollapsed4 = !isCollapsed4">
+											<a role="button" >
+												<i class="glyphicon glyphicon-chevron-up" ng-class="{'glyphicon-chevron-up' : isCollapsed4, 'glyphicon-chevron-down' : !isCollapsed4}"></i>
+												<label>データ表示</label>
+											</a>
+										</div>
+									</div>
+									<div uib-collapse="isCollapsed4" >
+										<div class="panel-body">
+											<div class="col-md-12 ">
+												<div class="row">
+													<table class="table table-bordered table-title">
+														<thead>
+															<tr>
+																<th class="header-no-content"></th>
+															</tr>
+														</thead>
+														<tfoot class="travelTfoot">
+															<tr >
+																<th class="color-chart1-line3 text-left" >検出予定数</th>
+															</tr>
+															<tr >
+																<th class="color-chart1-line4 text-left" >検出数</th>
+															</tr>
+														</tfoot>
+													</table>
+													<div class="table-responsive-content">
+														<table class="table table table-bordered table-content text-center ">
+															<thead class="travelThead">
+																<tr>
+																	<th class="titleMonth text-center" ng-repeat="c in m.data.columnsMonth" colspan="{{c.colSpan}}">{{c.value}}</th>
+																</tr>
+																<tr>
+																	<th ng-repeat="c in m.data.columns" class="th-header text-center">{{c.day}}</th>
+																</tr>
+															</thead>
+															<tfoot class="travelTfoot">
+																<tr>
+																	<td ng-repeat="data in m.data.dataLine3"  class="color-chart1-line3">{{data.value}}</td>
+																</tr>
+																<tr>
+																	<td ng-repeat="data in m.data.dataLine4" class="color-chart1-line4">{{data.value}}</td>
+																</tr>
+															</tfoot>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- modal choose user -->
+	<script type="text/ng-template" id="modalInfo.html">
+		<div class="modal-header border-bottom">
+			<button type="button" class="close" ng-click="$dismiss('cancel')">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<h4 class="modal-title">
+				<i class="glyphicon glyphicon-th-list"></i>
+				{{m.day}} {{m.panelHeader}}
+			</h4>
+		</div>
+		<div class="model-body">
+			<div class="panel ">
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-3 col-sm-4 ">
+							<div class="form-inline form-group">
+								<label for="idShow">表示件数:</label>
+								<select name="mySelect" id="mySelect" ng-options="option for option in m.optionShow" ng-model="m.selectShowUserList" class="form-control form-control-xs"></select>
+							</div>
+						</div>
+						<div class="col-md-4 col-md-offset-5 col-sm-offset-2 col-sm-6 ">
+							<div class="form-group">
+								<input class="form-control" placeholder="検索..." type="text" id="idShearch" ng-model="m.searchUser" />
+							</div>
+						</div>
+					</div>
+					<div class="table-responsive">
+						<table class="table table-bordered table-hover table-striped table-info-chart">
+							<thead>
+								<tr>
+									<th class="colId">
+										<a href="javscript:void(0)">テストケースID<i class="glyphicon glyphicon-sort"></i></a>
+									</th>
+									<th>
+										<a href="javscript:void(0)" ng-click="m.fieldSortUser = 'userName'; m.fieldSortReserveUser = !m.fieldSortReserveUser;">
+											テストケース名
+											<i class="glyphicon glyphicon-sort"></i>
+										</a>
+									</th>
+									<th>
+										<a href="javscript:void(0)" ng-click="m.fieldSortUser = 'lastName'; m.fieldSortReserveUser = !m.fieldSortReserveUser;">
+											実行開始日
+											<i class="glyphicon glyphicon-sort"></i>
+										</a>
+									</th>
+									<th>
+										<a href="javscript:void(0)" ng-click="m.fieldSortUser = 'roleName'; m.fieldSortReserveUser = !m.fieldSortReserveUser;">実行終了日<i class="glyphicon glyphicon-sort"></i></a>
+									</th>
+									<th class="text-center">
+										<a href="javscript:void(0)" ng-click="m.fieldSortUser = 'roleName'; m.fieldSortReserveUser = !m.fieldSortReserveUser;">実行終了日<i class="glyphicon glyphicon-sort"></i></a>
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr  ng-repeat="(i, item) in m.listData | filter : m.searchUser | limitTo : m.selectShowUserList | orderBy: m.fieldSortUser : m.fieldSortReserveUser track by $index" class="repeat-animated slide-right">
+									<td class="table-checkbox label-checkbox text-center">{{item.testCaseId}}</td>
+									<td>{{item.testCaseName}}</td>
+									<td>{{item.beginDate}}</td>
+									<td>{{item.endDate}}</td>
+									<td class="text-center"><span class="label label-default label-status label-danger">NG</span></td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+					<div class="row" ng-if="m.listData.length >
+						m.selectShowUserList">
+						<div class="col-sm-12">
+							<label>{{m.listData.length}} 件中 1 から {{m.selectShowUserList}} まで表示</label>
+
+							<div class="pull-right">
+								<uib-pagination total-items="m.listData.length" ng-model="m.curentPageUser" force-ellipses="true" class="pagination-sm" boundary-links="true" num-pages="numPages"></uib-pagination>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-warning" data-dismiss="modal" ng-click="$dismiss('cancel');">キャンセル</button>
+		</div>
+	</script>
+	<!-- end modal choose user -->
+</div>

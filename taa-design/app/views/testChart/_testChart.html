@@ -1,0 +1,106 @@
+<div ng-controller="TestChartController" ng-init="init();m.screenName = 'テスト進捗'">
+	<ol class="breadcrumb taa-box-shadow-panel">
+		<li>
+			<a ui-sref="main.projectList"> <i class="glyphicon glyphicon-home"></i>
+				トップ
+			</a>
+		</li>
+		<li>
+			<a ui-sref="main.testManagement.testStatusList">テスト管理（テスト状況）</a>
+		</li>
+		<li class="active">{{m.screenName}}</li>
+	</ol>
+	<div  class="panel TestChart0100 taa-panel taa-box-shadow-panel" >
+		<div class="panel-heading"> <i class="glyphicon glyphicon-th-list"></i>
+			要件とテストのトレーサビリティ 最終更新日時	2016/04/04
+		</div>
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="tab-container ">
+
+						<!-- Nav tabs -->
+						<ul class="nav nav-tabs" role="tablist">
+							<li  ng-class="{active: $state.includes('main.testChart.testProgress')} " ng-click="m.screenName = 'テスト進捗'">
+								<a ui-sref="main.testChart.testProgress">テスト進捗</a>
+								<span class="border-bottom-tab slideInRight"></span>
+							</li>
+							<li ng-class="{active: $state.includes('main.testChart.predictionProblem')} " ng-click="m.screenName = ' 問題予測'">
+								<a ui-sref="main.testChart.predictionProblem" >問題予測</a>
+								<span class="border-bottom-tab slideInRight"></span>
+							</li>
+							<li ng-class="{active: $state.includes('main.testChart.causeAnalysis')} " ng-click="m.screenName = '原因分析'">
+								<a ui-sref="main.testChart.causeAnalysis" >原因分析</a>
+								<span class="border-bottom-tab slideInRight"></span>
+							</li>
+						</ul>
+
+						<!-- Tab panes -->
+						<div class="tab-content">
+							<div class="tab-pane active slide-down-none-out" >
+								<div class="side-bar taa-box-shadow-panel slide-left" ng-show="!m.isShowSidebar">
+									<div class="panel">
+										<div class="panel-body">
+											<div class="collapse-tree-list">
+												<i class="glyphicon glyphicon-minus" ng-click="m.plusMinus = !m.plusMinus"></i>
+											</div>
+											<!-- <div class="side-bar-content" tree-list source="m.treeList" selected="{{m.testSuiteIdSelected}}" on-selected="selectedTestSuit(item)"></div> -->
+											<abn-tree show-option='false' abn-width="248px"
+					                            tree-data           ="m.treeList"
+					                            tree-control        ="m.naviTree"
+					                            icon-leaf           =""
+					                            icon-expand         ="glyphicon glyphicon-triangle-right"
+					                            icon-collapse       ="glyphicon triangle-bottom-right"
+					                            icon-collapse1       ="glyphicon triangle-bottom-right1"
+					                            on-select           ="naviTreeHandler(branch)"
+					                            expand-level        ="2"
+					                            initial-selection   ="{{m.initial}}"
+					                            hidden-plust        ="m.plusMinus"
+					                            event-enter         ="eventEnter(flag)">
+					                        </abn-tree>
+										</div>
+									</div>
+								</div>
+								<div class="btn-collapse-sidebar" ng-click="m.showSidebarMini = !m.showSidebarMini"><i class="glyphicon glyphicon-arrow-right" ng-class="{'glyphicon-arrow-right' : !m.showSidebarMini, 'glyphicon-arrow-left' : m.showSidebarMini}"></i></div>
+								<div class="taa-box-shadow-panel slide-left side-bar-responsive" ng-if="m.showSidebarMini">
+									<div class="panel">
+										<div class="panel-body">
+											<div class="collapse-tree-list">
+												<i class="glyphicon glyphicon-minus" ng-click="m.plusMinus = !m.plusMinus"></i>
+											</div>
+											<!-- <div class="side-bar-content" tree-list source="m.treeList" selected="{{m.testSuiteIdSelected}}" on-selected="selectedTestSuit(item)"></div> -->
+											<abn-tree show-option='false' abn-width="248px"
+					                            tree-data           ="m.treeList"
+					                            tree-control        ="m.naviTree"
+					                            icon-leaf           =""
+					                            icon-expand         ="glyphicon glyphicon-triangle-right"
+					                            icon-collapse       ="glyphicon triangle-bottom-right"
+					                            icon-collapse1       ="glyphicon triangle-bottom-right1"
+					                            on-select           ="naviTreeHandler(branch)"
+					                            expand-level        ="2"
+					                            initial-selection   ="{{m.initial}}"
+					                            hidden-plust        ="m.plusMinus"
+					                            event-enter         ="eventEnter(flag)">
+					                        </abn-tree>
+										</div>
+									</div>
+								</div>
+								<div class="content-chart transition" ng-class="{'mini-sidebar' : m.isShowSidebar}">
+									<div class="row">
+										<div  class="panel  taa-panel taa-box-shadow-panel" ><i class="glyphicon glyphicon-chevron-left icon-mini-sidebar" ng-click="m.isShowSidebar = !m.isShowSidebar" ng-class="{'glyphicon-chevron-left': !m.isShowSidebar, 'glyphicon-chevron-right': m.isShowSidebar}"></i>
+											<div class="panel-heading">
+												
+												SystemEXE
+											</div>
+											<div class="panel-body slide-top" ui-view="content-chart"></div>
+										</div>
+									</div>
+								</div>
+							</div>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

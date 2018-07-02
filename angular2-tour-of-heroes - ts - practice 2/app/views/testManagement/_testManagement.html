@@ -1,0 +1,76 @@
+<div ng-controller="TestManagementController" ng-init="init()">
+	<ol class="breadcrumb taa-box-shadow-panel">
+		<li>
+			<a ui-sref="main.projectList"> <i class="glyphicon glyphicon-home"></i>
+				トップ
+			</a>
+		</li>
+		<li class="active">テスト管理（テスト状況）</li>
+	</ol>
+	<div  class="panel TestManagement0100 taa-panel taa-box-shadow-panel" >
+		<div class="panel-heading"> <i class="glyphicon glyphicon-th-list"></i>
+			要件とテストのトレーサビリティ 最終更新日時	2016/04/04
+			<div ng-if="$state.includes('main.testManagement.testStatusList')" class="panel-title-right toggle">
+				<button class="btn btn-default btn-xs pull-right toggle">グラフ詳細</button>
+			</div>
+		</div>
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="tab-container ">
+
+						<!-- Nav tabs -->
+						<ul class="nav nav-tabs" role="tablist">
+							<li  ng-class="{active: $state.includes('main.testManagement.testStatusList')} ">
+								<a ui-sref="main.testManagement.testStatusList">テスト状況</a>
+								<span class="border-bottom-tab slideInRight"></span>
+							</li>
+							<li ng-class="{active: $state.includes('main.testManagement.import')} ">
+								<a ui-sref="main.testManagement.import" >データ取り込み</a>
+								<span class="border-bottom-tab slideInRight"></span>
+							</li>
+							<li ng-class="{active: $state.includes('main.testManagement.showDataImport')} ">
+								<a ui-sref="main.testManagement.showDataImport" >データ取り込みデータ一覧</a>
+								<span class="border-bottom-tab slideInRight"></span>
+							</li>
+							<li ng-if="$state.includes('main.testManagement.testStatusList')" class="pull-right active-filter-layout-large" ng-class="{'active' : m.showFilter}">
+								<a href="javascript:void(0)" ng-if="!m.showFilter" ng-click="m.showFilter = !m.showFilter" class="inactive-filter slide-left-none-out">
+									<i class="glyphicon glyphicon-search"></i>
+								</a>
+								<a ng-if="m.showFilter" class="active-filter slide-right-none-out">
+									<div class="form-inline">
+										<label for="mySelect">ステータス :</label>
+										<select class="form-control" name='mySelect' id='mySelect'      ng-options='option for option in m.listStatusName'      ng-model='m.selectedStatus'></select>
+										<label for="idSearch">検索 ：</label>
+										<input type="textbox" class="form-control" id="idSearch" ng-model="m.search"/>
+										<i class="icon-remove glyphicon glyphicon-remove" ng-click="m.showFilter = !m.showFilter"></i>
+									</div>
+								</a>
+								<span class="border-bottom-tab slideInRight"></span>
+							</li>
+						</ul>
+
+						<!-- Tab panes -->
+						<div class="tab-content">
+							<div ng-if="m.showFilter" class="col-md-12 active-filter-layout-small slide-right">
+								<form class="form-inline">
+									<div class="form-group">
+										<label for="exampleInputName2">ステータス :</label><i class="icon-remove icon-remove-top glyphicon glyphicon-remove pull-right" ng-click="m.showFilter = !m.showFilter"></i>
+										<select class="form-control" name='mySelect' id='mySelect'      ng-options='option for option in m.listStatusName'      ng-model='m.selectedStatus'></select>
+									</div>
+									<div class="form-group">
+										<label for="exampleInputEmail2">検索 ：</label>
+										<input type="textbox" class="form-control" id="idSearch" ng-model="m.search"/>
+										<i class="icon-remove glyphicon glyphicon-remove icon-remove-end" ng-click="m.showFilter = !m.showFilter"></i>
+									</div>
+								</form>
+							</div>
+							<div class="tab-pane active slide-down" ui-view="content-tab"></div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

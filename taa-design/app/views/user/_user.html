@@ -1,0 +1,114 @@
+<div ng-controller="UserController" ng-init="init()">
+	<ol class="breadcrumb taa-box-shadow-panel">
+		<li>
+			<a ui-sref="main.projectList"> <i class="glyphicon glyphicon-home"></i>
+				トップ
+			</a>
+		</li>
+		<li class="active">
+			ユーザー一覧
+		</li>
+	</ol>
+	<div  class="panel User0100 taa-panel taa-box-shadow-panel" >
+		<div class="panel-heading"> <i class="glyphicon glyphicon-th-list"></i>
+			ユーザー一覧
+			<div class="btn btn-primary glyphicon glyphicon-plus pull-right button-top-right" ng-click="AddNewUser()"></div>
+		</div>
+		<div class="panel-body has-btn-primary">
+			<div class="row">
+				<div class="col-md-2 col-sm-4 ">
+					<div class="form-inline form-group">
+						<label for="idShow">表示件数:</label>
+						<select name="mySelect" id="mySelect" class="form-control form-control-xs" ng-options="option for option in m.optionShow" ng-model="m.selectShow"></select>
+					</div>
+				</div>
+				<div class="col-md-4 col-md-offset-6 col-sm-offset-2 col-sm-6 ">
+					<div class="form-group">
+						<input class="form-control" placeholder="検索..." type="text" id="idShearch" ng-model="m.search" />
+					</div>
+				</div>
+			</div>
+			<div class="table-responsive">
+				<table class="table table-bordered table-hover table-striped">
+					<thead>
+						<tr>
+							<th>
+								<a href="javscript:void(0)" ng-click="m.fieldSort = 'userName'; m.fieldSortReserve = !m.fieldSortReserve;">
+									ユーザー名
+									<i class="glyphicon glyphicon-sort"></i>
+								</a>
+							</th>
+							<th>
+								<a href="javscript:void(0)" ng-click="m.fieldSort = 'lastName'; m.fieldSortReserve = !m.fieldSortReserve;">
+									名前
+									<i class="glyphicon glyphicon-sort"></i>
+								</a>
+							</th>
+							<th>
+								<a href="javscript:void(0)" ng-click="m.fieldSort = 'mailAddress'; m.fieldSortReserve = !m.fieldSortReserve;">
+									メール
+									<i class="glyphicon glyphicon-sort"></i>
+								</a>
+							</th>
+							<th>
+								<a href="javscript:void(0)" ng-click="m.fieldSort = 'validFlag'; m.fieldSortReserve = !m.fieldSortReserve;">
+									有効区分
+									<i class="glyphicon glyphicon-sort"></i>
+								</a>
+							</th>
+							<th class="text-center col-action">
+								<a href="javscript:void(0)">
+									アクション
+								</a>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="(i, item) in m.userList | filter : m.search | limitTo : m.selectShow | orderBy: m.fieldSort : m.fieldSortReserve" class="repeat-animated slide-right">
+							<td>{{item.userName}}</td>
+							<td>{{item.lastName}} {{item.firstName}}</td>
+							<td>{{item.mailAddress}}</td>
+							<td>
+								<div>
+									<select class="form-control" ng-model="item.validFlag" ng-options="kb.value as kb.name for kb in  m.kubun"></select>
+								</div>
+							</td>
+							<td class="text-center">
+								<div class="action-group">
+									<a class="action-btn-group btn-group-edit" ui-sref="main.userDetail">
+										<i class="glyphicon glyphicon-pencil"></i>
+									</a>
+									<div class="action-btn-group btn-group-remove" ng-click="clickOnRemoveUser(item, i);">
+										<i class="glyphicon glyphicon-trash" ></i>
+									</div>
+								</div>
+							</td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+			<div class="row" ng-if="m.userList.length > m.selectShow">
+				<div class="col-sm-12">
+					<label>{{m.userList.length}} 件中 1 から {{m.selectShow}} まで表示</label>
+					
+					<div class="pull-right">
+						<uib-pagination total-items="m.userList.length" ng-model="m.curentPage" force-ellipses="true" class="pagination-sm" boundary-links="true" num-pages="numPages"></uib-pagination>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/ng-template" id="modalConfirmRemoveUser.html">
+        <div class="modal-header border-bottom">
+            <h4 class="modal-title"><i class="glyphicon glyphicon-question-sign"></i> 確認</h4>
+        </div>
+        <div class="modal-body">
+            削除してよろしいでしょうか？
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="confirmRemoveUser()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="cancelRemoveUser()">Cancel</button>
+        </div>
+    </script>
+</div>

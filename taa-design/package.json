@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "devDependencies": {
+    "express": "^4.13.4",
+    "gulp": "^3.8.8",
+    "gulp-concat": "^2.6.0",
+    "gulp-ruby-sass": "^2.0.6",
+    "gulp-uglify": "^1.5.3"
+  }
+}

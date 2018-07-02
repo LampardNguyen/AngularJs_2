@@ -1,0 +1,68 @@
+<div>
+	<nav class="navbar navbar-default navbar-fixed-top NAV0100 taa-box-shadow-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+
+			<a class="navbar-brand">TEST ACE ADVANCE</a>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+			<ul class="nav navbar-nav ">
+				<li class="dropdown">
+					<a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+						マスタ管理
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu slideInUp">
+						<li>
+							<a href="#">ユーザー一覧</a>
+						</li>
+						<li>
+							<a href="#">グループ一覧</a>
+						</li>
+						<li>
+							<a href="#">ロール一覧</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+					<a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+						{{m.username}}
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu user slideInRight">
+						<li class="user-info">
+							<div class="user-icon"> <i class="glyphicon glyphicon-user"></i>
+							</div>
+							<div class="user-name">
+								{{m.username}}
+							</div>
+						</li>
+						<li class="user-footer">
+							<button type="button" class="btn btn-default">個人設定</button>
+							<button type="button" class="btn btn-default pull-right" ng-click="logout('login')">ログアウト</button>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+<div class="">
+	<div class=" Main0100">
+
+		<div class="view-content slide-top">
+			<router-outlet></router-outlet>
+		</div>
+
+	</div>
+</div>
+<footer>Copyright© 2015 <b>SystemEXE, Inc</b>. all rights reserved.</footer>
+</div>

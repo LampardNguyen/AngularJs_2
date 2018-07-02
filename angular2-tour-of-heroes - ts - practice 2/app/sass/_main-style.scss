@@ -1,0 +1,435 @@
+root{
+	>div{
+		&.loading{
+			margin: 50px auto;
+		    font-size: 45px;
+		    width: 220px;
+		    color: gray;
+		}
+	}
+	
+
+}
+body {
+	background-color: #F1EFEF;
+	line-height: 1.42857143;
+	color: #333333;
+}
+body, label, input {
+	font-family: Lucida Grande, "Hiragino Kaku Gothic ProN", "\u30d2\u30e9\u30ae\u30ce\u89d2\u30b4 ProN W3", Meiryo, \u30e1\u30a4\u30ea\u30aa, sans-serif;
+	font-size: 12px;
+}
+.label {
+	font-size: 90%;
+}
+.taa-box-shadow-header {
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+	//0px 1px 1px 1px #B3B3B3, 0px 1px 1px 1px rgb(232, 232, 232);
+}
+.taa-box-shadow-panel {
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.32), 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0px rgba(0, 0, 0, 0.12);
+	//0 1px 3px 0 rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 2px 1px -1px rgba(0, 0, 0, .12);
+}
+.taa-box-shadow-panel-child {
+	//box-shadow: 0 1px 0px 0 rgba(0, 0, 0, 0.11), 0 1px 11px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0px rgba(0, 0, 0, 0.12);
+	box-shadow: 0px 1px 1px 1px #BFBEBE, 0px 0px 1px 1px #E4E0E0;
+	border: 0px !important;
+}
+.taa-box-shadow-panel-child-danger {
+	//box-shadow: 0 1px 0px 0 rgba(0, 0, 0, 0.11), 0 1px 11px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0px rgba(0, 0, 0, 0.12);
+	box-shadow: 0px 1px 1px 1px #D42F2F, 0px 0px 1px 1px rgba(212, 107, 107, 0.47);
+	border: 0px !important;
+}
+footer {
+	border: 1px solid $header-background-color;
+	padding: 10px 25px;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	background-color: $header-background-color;
+	text-align: right;
+	color: white;
+	z-index: 3;
+}
+.view-content {
+	padding-bottom: 15px;
+}
+.NAV0100 {
+	border-radius: 0px;
+	background-color: $header-background-color;
+	border-color: $header-background-color;
+
+	.navbar-header {
+		a {
+			color: white !important;
+
+			&.navbar-brand {
+				font-weight: bold;
+			}
+		}
+	}
+	.navbar-nav {
+		.open {
+			>a {
+				background-color: $background-color-dropdown-main !important;
+				//$color-header-main !important;
+				// $active-header-background-color !important;
+			}
+		}
+	}
+	a.dropdown-toggle {
+		color: white !important;
+
+		&:hover {
+			background-color: $background-color-dropdown-main !important;
+			//$color-header-main !important;
+			//$active-header-background-color !important;
+		}
+		&:focus {
+			background-color: $background-color-dropdown-main !important;
+			//$color-header-main !important;
+			// $active-header-background-color !important;
+		}
+	}
+	.active {
+		a {
+			background-color: $background-color-dropdown-main !important;
+			//$color-header-main !important;
+			// $active-header-background-color !important;
+		}
+	}
+	.dropdown-menu {
+		li {
+			border-bottom: 1px solid #E4E4E4;
+
+			&:last-child {
+				border-bottom: 0px;
+			}
+			a {
+				&:hover {
+					background-color: $background-color-dropdown-main !important;
+					color: white !important;
+				}
+			}
+		}
+		&.user {
+			width: 280px;
+			padding-top: 0px;
+
+			.user-info {
+				height: 175px;
+				background-color: $background-color-dropdown-main;
+
+				div {
+					&.user-icon {
+						margin: 0 auto;
+						width: 120px;
+						border-radius: 50%;
+						background-color: #E6E6E6;
+						height: 120px;
+						text-align: center;
+						padding-top: 15px;
+						position: relative;
+						top: 25px;
+
+						i {
+							font-size: 80px;
+						}
+					}
+					&.user-name {
+						text-align: center;
+						color: white;
+						padding: 5px;
+						margin-top: 25px;
+					}
+				}
+			}
+			.user-footer {
+				.btn {
+					margin: 6px;
+				}
+			}
+		}
+	}
+}
+.Main0100 {
+	margin: 20px 15px 30px 15px;
+
+	.ProjectList0100 {
+		table {
+			tr {
+				td {
+					vertical-align: middle;
+
+					&.progress-knob {
+						text-align: center;
+						width: 100px;
+					}
+					&.cost {
+						text-align: right;
+					}
+					&.status {
+						text-align: center;
+					}
+					.label-status {
+						width: 80px;
+						display: inline-block;
+					}
+				}
+				th {
+					&.status {
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
+	.ProjectDetail0100 {
+		table {
+			tr {
+				td {
+					.action-btn {
+						width: 40px;
+						display: inline-block;
+						height: 40px;
+						text-align: center;
+						background-color: #D9534F;
+						color: white;
+						padding: 13px;
+						margin: 0 auto;
+						border: 1px solid #D9534F;
+
+						&:hover {
+							background-color: white;
+							color: #D9534F;
+						}
+					}
+				}
+			}
+		}
+	}
+	.TestManagement0100 {
+		.tab-container {
+			.nav-tabs {
+				.active-filter {
+					padding: 0px;
+					padding-bottom: 3px;
+					color: inherit;
+					font-weight: inherit;
+
+					.icon-remove {
+						color: $color-remove;
+						padding: 6px;
+						cursor: pointer;
+						font-size: 15px;
+					}
+				}
+				.inactive-filter {
+					padding: 9px 15px;
+
+					i {
+						font-size: 15px;
+					}
+				}
+			}
+			.active-filter-layout-small {
+				display: none;
+				padding: 10px 15px;
+				float: right;
+
+				.icon-remove {
+					padding: 8px;
+					color: $color-remove;
+					cursor: pointer;
+				}
+			}
+			@media (max-width:945px) {
+				.active-filter-layout-small {
+					display: block;
+
+					.icon-remove-top {
+						display: none;
+					}
+				}
+				.active {
+					&.active-filter-layout-large {
+						display: none;
+					}
+				}
+			}
+			@media (max-width:768px) {
+				.active-filter-layout-small {
+					float: initial;
+
+					.icon-remove-top {
+						display: inline-block;
+						padding: 0px;
+					}
+					.icon-remove-end {
+						display: none;
+					}
+				}
+			}
+		}
+		.TestStatusList0100 {
+			.row-chart {
+				.progress-label {
+					margin-bottom: 15px;
+				}
+				.progress-label-status {
+					color: red;
+					font-weight: bold;
+					margin-top: 3px;
+					margin-right: 5px;
+				}
+				.status {
+					@media (min-width:979px) {
+						border-right: 1px solid #cccccc;
+					}
+					@media (max-width:979px) {
+						border-bottom: 1px solid #cccccc;
+						margin-bottom: 10px;
+						padding-bottom: 10px;
+					}
+				}
+				.chart {
+					height: 235px;
+
+					>div {
+						height: 235px;
+					}
+				}
+				.table-detail-progress {
+					display: table;
+					width: 100%;
+
+					.table-row {
+						display: table-row;
+
+						>div {
+							display: table-cell;
+							padding: 2px;
+							border-bottom: 1px dashed gray;
+						}
+					}
+					.table-detail-text {
+					}
+				}
+				.info-chart {
+					position: relative;
+					top: -52px;
+					width: 285px;
+					right: -160px;
+				}
+			}
+		}
+	}
+	.Import0100 {
+		.are-drag-drop {
+			border: 3px dashed rgba(0, 0, 0, 0.3);
+			height: 335px;
+
+			.icon {
+				text-align: center;
+				padding: 15px;
+				margin-top: 75px;
+
+				i {
+					font-size: 1000%;
+					display: block;
+					margin: 0 auto;
+					width: 110px;
+				}
+				.comment {
+					color: #B2B2B2;
+				}
+			}
+		}
+		.taa-panel-child {
+			margin: 5px 5px 20px 5px;
+			padding: 0px;
+		}
+		.panel-version {
+			.panel-body {
+				>div {
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+	.ShowDataImport0100{
+		.datasheet{
+			margin: 15px 0px;
+		}
+	}
+}
+.Login0100 {
+}
+.td-action {
+	position: relative;
+
+	.action {
+		width: 100%;
+		display: none;
+
+		.action-btn {
+			width: 50%;
+			height: 39px;
+			text-align: center;
+			display: table-cell;
+			vertical-align: middle;
+			cursor: pointer;
+
+			&:first-child {
+				background-color: $header-background-color;
+				//#777777;
+				color: white;
+				border: 1px solid $header-background-color;
+				//#777777;
+
+				&:hover {
+					background-color: white;
+					color: $header-background-color;
+					//#777777;
+				}
+			}
+			&:last-child {
+				background-color: rgb(217, 83, 79);
+				color: white;
+				border: 1px solid rgb(217, 83, 79);
+
+				&:hover {
+					background-color: white;
+					color: rgb(217, 83, 79);
+				}
+			}
+		}
+	}
+}
+a {
+	color: $color-a;
+
+	&:hover {
+		color: $color-a;
+		text-decoration: initial;
+	}
+}
+.text-center {
+	text-align: center;
+}
+.text-right {
+	text-align: right;
+}
+.border-bottom {
+	border-bottom: 1px solid $color-bottom-header-panel;
+}
+.text-color-main {
+	color: $color-header-main;
+}
+.text-color-gray {
+	color: rgb(217, 217, 217);
+}
+.text-color-pink {
+	color: rgb(230, 184, 185);
+}

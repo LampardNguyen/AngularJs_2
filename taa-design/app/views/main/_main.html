@@ -1,0 +1,179 @@
+<div ng-init="init()">
+	<nav class="navbar navbar-default navbar-fixed-top NAV0100 taa-box-shadow-header">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<a class="navbar-brand">TEST ACE ADVANCE</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+				<ul class="nav navbar-nav ">
+					<li class="dropdown">
+						<a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+							マスタ管理
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu slideInUp">
+							<li>
+								<a ui-sref="main.user">ユーザー一覧</a>
+							</li>
+							<li>
+								<a ui-sref="main.group">グループ一覧</a>
+							</li>
+							<li>
+								<a ui-sref="main.role">ロール一覧</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a  class="dropdown-toggle nav-header-right text-right" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+							{{m.username}}
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu user slideInRight">
+							<li class="user-info">
+								<div class="user-icon"> <i class="glyphicon glyphicon-user"></i>
+								</div>
+								<div class="user-name">{{m.username}}</div>
+							</li>
+							<li class="user-footer">
+								<button type="button" class="btn btn-default" ng-click="configUser()">個人設定</button>
+								<button type="button" class="btn btn-default pull-right" ng-click="logout('login')">ログアウト</button>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="">
+		<div class=" Main0100">
+			<div ui-view="content" class="view-content slide-top"></div>
+		</div>
+	</div>
+	<script type="text/ng-template" id="modalUserConfig.html">
+        <div class="modal-header border-bottom">
+        <button type="button" class="close" ng-click="$dismiss('cancel')">
+				<span aria-hidden="true">&times;</span>
+			</button>
+            <h4 class="modal-title"><i class="glyphicon glyphicon-info-sign"></i> 個人設定</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+            	<div class="col-md-12 col-sm-12">
+					<div class="panel taa-panel-child taa-box-shadow-panel-child">
+						<div class="panel-heading">情報</div>
+						<div class="panel-body">
+							<div class="row">
+								<form class="form-horizontal">
+										<div class="col-md-offset-2 col-sm-offset-2 col-md-8 col-sm-8">
+											<div class="form-group">
+												<label for="idUsername" class="col-md-4 col-sm-4 control-label">
+													ユーザー名
+												</label>
+												<div class="col-md-8 col-sm-8">
+													<input readonly="" type="text" class="form-control" placeholder="ユーザー名" id="idUsername"/>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-offset-2 col-sm-offset-2 col-md-8 col-sm-8">
+											<div class="form-group">
+												<label for="idLastname" class="col-md-4 col-sm-4 control-label">
+													姓
+												</label>
+												<div class="col-md-8 col-sm-8">
+													<input readonly="" type="text" class="form-control" placeholder="姓" id="idLastname"/>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-offset-2 col-sm-offset-2 col-md-8 col-sm-8">
+											<div class="form-group">
+												<label for="idFirstname" class="col-md-4 col-sm-4 control-label">
+													名
+												</label>
+												<div class="col-md-8 col-sm-8">
+													<input readonly="" type="text" class="form-control" placeholder="名" id="idFirstname"/>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-offset-2 col-sm-offset-2 col-md-8 col-sm-8">
+											<div class="form-group">
+												<label for="idEmail" class="col-md-4 col-sm-4 control-label">
+													メールアドレス
+													<i class="glyphicon glyphicon-asterisk required"></i>
+												</label>
+												<div class="col-md-8 col-sm-8">
+													<input type="text" class="form-control" placeholder="メールアドレス" id="idEmail"/>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-offset-2 col-sm-offset-2 col-md-8 col-sm-8">
+											<div class="form-group">
+												<label for="idLanguage" class="col-md-4 col-sm-4 control-label">言語 
+													<i class="glyphicon glyphicon-asterisk required"></i></label>
+												<div class="col-md-8 col-sm-8">
+													<select name='mySelect' class="form-control" id='mySelect'      ng-options=' option.name for option in m.listLang' ng-model="m.language" ></select>
+												</div>
+											</div>
+										</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12 col-sm-12 slide-right">
+					<div class="panel taa-panel-child taa-box-shadow-panel-child">
+						<div class="panel-heading">認証</div>
+						<div class="panel-body">
+							<div class="row">
+								<form class="form-horizontal">
+									<div class="col-md-offset-2 col-sm-offset-2 col-md-8 col-sm-8">
+										<div class="col-md-12">
+											<div class="form-group">
+												<label for="idPassword" class="col-md-4 col-sm-4 control-label">
+													新しいパスワード
+													<i class="glyphicon glyphicon-asterisk required"></i>
+												</label>
+												<div class="col-md-8 col-sm-8">
+													<input type="password" class="form-control" placeholder="新しいパスワード" id="idPassword"/>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="form-group">
+												<div class="col-md-offset-4 col-sm-offset-4 col-md-8 col-sm-8">最低8文字の長さが必要です。</div>
+											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="form-group">
+												<label for="idConfirm" class="col-md-4 col-sm-4 control-label">
+													パスワード（確認）
+													<i class="glyphicon glyphicon-asterisk required"></i>
+												</label>
+												<div class="col-md-8 col-sm-8">
+													<input type="password" class="form-control" placeholder="パスワード（確認）" id="idConfirm"/>
+												</div>
+											</div>
+										</div>
+										
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ><i class="glyphicon glyphicon-ok"></i> 保存</button>
+            <button class="btn btn-warning" type="button" ng-click="$dismiss('cancel')"><i class="glyphicon glyphicon-circle-arrow-left"></i> キャンセル</button>
+        </div>
+    </script>
+</div>

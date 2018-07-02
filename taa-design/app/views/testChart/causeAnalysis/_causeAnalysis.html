@@ -1,0 +1,83 @@
+<div ng-controller="CauseAnalysisController" class="CauseAnaLysis0100">
+	<div class="row">
+		<div class="cause-analysis-header">
+			<div class="col-md-6 col-sm-8 col-xs-8">
+				<table class="table table-bordered borderlessCau">
+			      <tbody><tr>
+			        <td class=" backGBack header-title-1" rowspan="2">縦軸</td>
+			        <td class=" backGBack header-title-2">主軸</td>
+			        <td class="">インシデント数</td>
+			      </tr>
+			      <tr>
+			        <td class="td-res header-title-2 backGBack">第２軸</td>
+			        <td>累積比率</td>
+			      </tr>
+			      <tr>
+			        <td class="backGBack1 header-title-1">横軸</td>
+			        <td colspan="2">
+				        <div class="form-inline">
+							<select name='mySelect' id='mySelect' class="form-control form-control-xs form-select"     ng-options='option.id as option.value for option in m.typeProcess track by $index'   ng-model='m.selectedTypeProcess'></select>
+						</div>
+					</td>
+			      </tr>
+			  	</tbody>
+			  </table>
+			</div>
+			<div class="col-md-6 col-sm-4 col-xs-4">
+				<button type="button" class="btn btn-primary margin-bottom-10"><i class="glyphicon glyphicon-search"></i> グラフ表示</button>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="cause-analysis-content">
+			<div class="col-md-12 ">
+				<div class="table-responsive table-chart-responsive background-color-chart">
+					<table class="table">
+						<tbody>
+							<tr>
+								<td>
+									<c3chart bindto-id="bar-and-line"
+								         chart-data="m.datapointsBarLine"
+								        
+								         chart-columns="m.datacolumnsBarLine"
+								         chart-x="m.dataxBL"
+								         size-width-flag="m.sizeWidthFlag"
+								         chart-data-grid-y-line="m.listBarAndLineGridLineY"
+								         chart-data-y2-tick-value="m.listChartAxisY2Tick"
+								         >
+							        <chart-axes values-x="x" y="bar" y2="line1"/>
+							        <chart-axis>
+									    <chart-axis-x axis-position="outer-center"
+									                  axis-type="category"
+									                  show="true">
+									          <chart-axis-x-tick />
+									      </chart-axis-x>
+									    <chart-axis-y axis-id="y"
+									                  axis-position="outer-right"
+									                  padding-top="200"
+									                  padding-bottom="0"
+									                  range-min="0"/>
+									    <chart-axis-y-tick  show-y-tick-value="true"/>
+									    <chart-axis-y axis-id="y2"
+									                  axis-position="outer-right"
+									                  padding-top="200"
+									                  padding-bottom="0"
+									                  range-max="120"
+									                  range-min="0"/>
+									    <chart-axis-y2-tick tick-format="%" show-y2-tick-value="true"></chart-axis-y2-tick>
+									  </chart-axis>
+									  <chart-legend show-legend="true" legend-position="right"/>
+								      <chart-grid show-x="false" show-y="true" >
+									       <chart-grid-optional axis-id="y" grid-value="0" show-grid-y-line="true"/>
+									  </chart-grid>
+									  <chart-point  r=4 r-select="3" />
+							   </c3chart>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>			
+			</div>
+		</div>
+	</div>
+</div>					
